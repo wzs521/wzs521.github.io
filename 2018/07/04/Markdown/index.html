@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Sql | Hexo</title>
+  <title>Markdown | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Sql">
+  <meta name="description" content="Markdown">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sql">
-<meta property="og:url" content="http://yoursite.com/2020/07/04/Sql/index.html">
+<meta property="og:title" content="Markdown">
+<meta property="og:url" content="http://yoursite.com/2018/07/04/Markdown/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Sql">
+<meta property="og:description" content="Markdown">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-03T17:04:56.000Z">
-<meta property="article:modified_time" content="2020-07-03T17:51:42.993Z">
+<meta property="og:image" content="https://www.baidu.com/img/bd_logo1.png?where=super">
+<meta property="article:published_time" content="2018-07-03T17:04:56.000Z">
+<meta property="article:modified_time" content="2020-07-04T03:59:03.824Z">
 <meta property="article:author" content="Wanzesen">
-<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Markdown">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.baidu.com/img/bd_logo1.png?where=super">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -155,59 +157,121 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Sql" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Markdown" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Sql
+      Markdown
     </h1>
   
 
         
-        <a href="/2020/07/04/Sql/" class="archive-article-date">
-  	<time datetime="2020-07-03T17:04:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
+        <a href="/2018/07/04/Markdown/" class="archive-article-date">
+  	<time datetime="2018-07-03T17:04:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Sql"><a href="#Sql" class="headerlink" title="Sql"></a>Sql</h1><a id="more"></a>
+        <h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><a id="more"></a>
 
-<h1 id="一、基础"><a href="#一、基础" class="headerlink" title="一、基础"></a>一、基础</h1><p>模式定义了数据如何存储、存储什么样的数据以及数据如何分解等信息，数据库和表都有模式。<br>主键的值不允许修改，也不允许复用（不能将已经删除的主键值赋给新数据行的主键）。<br>SQL（Structured Query Language)，标准 SQL 由 ANSI 标准委员会管理，从而称为 ANSI SQL。各个 DBMS 都有自己的实现，如 PL/SQL、Transact-SQL 等。<br>SQL 语句不区分大小写，但是数据库表名、列名和值是否区分依赖于具体的 DBMS 以及配置。<br>SQL 支持以下三种注释：</p>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>SELECT *<br>FROM mytable; – 注释<br>/* 注释1<br>   注释2 */<br>数据库创建与使用：<br>CREATE DATABASE test;<br>USE test;</p>
-<h1 id="二、创建表"><a href="#二、创建表" class="headerlink" title="二、创建表"></a>二、创建表</h1><p>CREATE TABLE mytable (</p>
-<h1 id="int-类型，不为空，自增"><a href="#int-类型，不为空，自增" class="headerlink" title="int 类型，不为空，自增"></a>int 类型，不为空，自增</h1><p>  id INT NOT NULL AUTO_INCREMENT,</p>
-<h1 id="int-类型，不可为空，默认值为-1，不为空"><a href="#int-类型，不可为空，默认值为-1，不为空" class="headerlink" title="int 类型，不可为空，默认值为 1，不为空"></a>int 类型，不可为空，默认值为 1，不为空</h1><p>  col1 INT NOT NULL DEFAULT 1,</p>
-<h1 id="变长字符串类型，最长为-45-个字符，可以为空"><a href="#变长字符串类型，最长为-45-个字符，可以为空" class="headerlink" title="变长字符串类型，最长为 45 个字符，可以为空"></a>变长字符串类型，最长为 45 个字符，可以为空</h1><p>  col2 VARCHAR(45) NULL,</p>
-<h1 id="日期类型，可为空"><a href="#日期类型，可为空" class="headerlink" title="日期类型，可为空"></a>日期类型，可为空</h1><p>  col3 DATE NULL,</p>
-<h1 id="设置主键为-id"><a href="#设置主键为-id" class="headerlink" title="设置主键为 id"></a>设置主键为 id</h1><p>  PRIMARY KEY (<code>id</code>));<br>三、修改表<br>添加列<br>ALTER TABLE mytable<br>ADD col CHAR(20);<br>删除列<br>ALTER TABLE mytable<br>DROP COLUMN col;<br>删除表<br>DROP TABLE mytable;<br>四、插入<br>普通插入<br>INSERT INTO mytable(col1, col2)<br>VALUES(val1, val2);<br>插入检索出来的数据<br>INSERT INTO mytable1(col1, col2)<br>SELECT col1, col2<br>FROM mytable2;<br>将一个表的内容插入到一个新表<br>CREATE TABLE newtable AS<br>SELECT * FROM mytable;<br>五、更新<br>UPDATE mytable<br>SET col = val<br>WHERE id = 1;<br>六、删除<br>DELETE FROM mytable<br>WHERE id = 1;<br>TRUNCATE TABLE 可以清空表，也就是删除所有行。<br>TRUNCATE TABLE mytable;<br>使用更新和删除操作时一定要用 WHERE 子句，不然会把整张表的数据都破坏。可以先用 SELECT 语句进行测试，防止错误删除。<br>七、查询<br>DISTINCT<br>相同值只会出现一次。它作用于所有列，也就是说所有列的值都相同才算相同。<br>SELECT DISTINCT col1, col2<br>FROM mytable;<br>LIMIT<br>限制返回的行数。可以有两个参数，第一个参数为起始行，从 0 开始；第二个参数为返回的总行数。<br>返回前 5 行：<br>SELECT *<br>FROM mytable<br>LIMIT 5;<br>SELECT *<br>FROM mytable<br>LIMIT 0, 5;<br>返回第 3 ~ 5 行：<br>SELECT *<br>FROM mytable<br>LIMIT 2, 3;<br>八、排序<br>•    ASC ：升序（默认）<br>•    DESC ：降序<br>可以按多个列进行排序，并且为每个列指定不同的排序方式：<br>SELECT *<br>FROM mytable<br>ORDER BY col1 DESC, col2 ASC;<br>九、过滤<br>不进行过滤的数据非常大，导致通过网络传输了多余的数据，从而浪费了网络带宽。因此尽量使用 SQL 语句来过滤不必要的数据，而不是传输所有的数据到客户端中然后由客户端进行过滤。<br>SELECT *<br>FROM mytable<br>WHERE col IS NULL;<br>下表显示了 WHERE 子句可用的操作符<br>操作符    说明<br>=    等于<br>&lt;    小于</p>
+<h1 id="Markdown文档编写指南"><a href="#Markdown文档编写指南" class="headerlink" title="Markdown文档编写指南"></a>Markdown文档编写指南</h1><h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><h2 id="1-Markdown-基本语法"><a href="#1-Markdown-基本语法" class="headerlink" title="1.Markdown 基本语法"></a>1.<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">Markdown 基本语法</a></h2><h2 id="2-中文-markdown-编写格式规范命令行工具"><a href="#2-中文-markdown-编写格式规范命令行工具" class="headerlink" title="2.中文 markdown 编写格式规范命令行工具"></a>2.<a href="https://github.com/lint-md/lint-md" target="_blank" rel="noopener">中文 markdown 编写格式规范命令行工具</a></h2><h2 id="3-markdownlint-Node-js-格式校验工具"><a href="#3-markdownlint-Node-js-格式校验工具" class="headerlink" title="3.markdownlint Node.js 格式校验工具"></a>3.<a href="https://github.com/DavidAnson/markdownlint" target="_blank" rel="noopener">markdownlint Node.js 格式校验工具</a></h2><p>概述<br>Markdown是一种纯文本标记语言，通过简单的标记语法来使普通文本内容具备有一定的格式，例如：</p>
+<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><p>1<br>2<br>Markdown相对于Word这种文档编辑器而言有如下优点，从而被广泛使用：</p>
+<p>语法简单，让文档编写专注于内容本身<br>支持Markdown语法的编辑器非常多，而且可以跨操作系统<br>可以转换为Word/PDF格式<br>支持在线编辑器:CSDN、简书<br>Markdown在研发工作中的主要应用场景为：</p>
+<p>代码仓库的README.md/CHANGELOG.md等常用文件<br>研发项目文档编写<br>需求分析文档<br>软件设计文档<br>接口文档<br>Gitlab流程相关<br>合并请求描述<br>标签发布记录<br>审查批注<br>基础语法<br>Markdwn支持如下标记：</p>
+<p>标题<br>段落<br>区块引用<br>超链接<br>图片<br>无序列表<br>有序列表<br>分隔线<br>字体<br>代码块<br>单行代码<br>多行代码<br>表格<br>特殊符号<br>标题<br>在想要设置为标题的文字前面加#(#和内容之前需要空一个空格)，markdown一共支持六级标题，如下：</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题-1"><a href="#三级标题-1" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题-1"><a href="#四级标题-1" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>段落<br>Markdown划分段落非常简单，就是在段落前后保留一个空行即可，例如：</p>
+<p>这是第一个段落内容</p>
+<p>这是第二个段落内容<br>1<br>2<br>3<br>效果如下：</p>
+<p>这是第一个段落内容</p>
+<p>这是第二个段落内容</p>
+<p>区块引用<br>如果我们需要对一段内容进行强调显示时，Markdown提供了一个特殊符号&gt;(&gt;和内容之前需要空一个空格)用于段落区块引用：</p>
 <blockquote>
-<p>   大于<br>&lt;&gt; !=    不等于<br>&lt;= !&gt;    小于等于<br>= !&lt;    大于等于<br>BETWEEN    在两个值之间<br>IS NULL    为 NULL 值<br>应该注意到，NULL 与 0、空字符串都不同。<br>AND 和 OR 用于连接多个过滤条件。优先处理 AND，当一个过滤表达式涉及到多个 AND 和 OR 时，可以使用 () 来决定优先级，使得优先级关系更清晰。<br>IN 操作符用于匹配一组值，其后也可以接一个 SELECT 子句，从而匹配子查询得到的一组值。<br>NOT 操作符用于否定一个条件。<br>十、通配符<br>通配符也是用在过滤语句中，但它只能用于文本字段。<br>•    % 匹配 &gt;=0 个任意字符；<br>•    _ 匹配 ==1 个任意字符；<br>•    [ ] 可以匹配集合内的字符，例如 [ab] 将匹配字符 a 或者 b。用脱字符 ^ 可以对其进行否定，也就是不匹配集合内的字符。<br>使用 Like 来进行通配符匹配。<br>SELECT *<br>FROM mytable<br>WHERE col LIKE ‘[^AB]%’; – 不以 A 和 B 开头的任意文本<br>不要滥用通配符，通配符位于开头处匹配会非常慢。<br>十一、计算字段<br>在数据库服务器上完成数据的转换和格式化的工作往往比客户端上快得多，并且转换和格式化后的数据量更少的话可以减少网络通信量。<br>计算字段通常需要使用 AS 来取别名，否则输出的时候字段名为计算表达式。<br>SELECT col1 * col2 AS alias<br>FROM mytable;<br>CONCAT() 用于连接两个字段。许多数据库会使用空格把一个值填充为列宽，因此连接的结果会出现一些不必要的空格，使用 TRIM() 可以去除首尾空格。<br>SELECT CONCAT(TRIM(col1), ‘(‘, TRIM(col2), ‘)’) AS concat_col<br>FROM mytable;<br>十二、函数<br>各个 DBMS 的函数都是不相同的，因此不可移植，以下主要是 MySQL 的函数。<br>汇总<br>函 数    说 明<br>AVG()    返回某列的平均值<br>COUNT()    返回某列的行数<br>MAX()    返回某列的最大值<br>MIN()    返回某列的最小值<br>SUM()    返回某列值之和<br>AVG() 会忽略 NULL 行。<br>使用 DISTINCT 可以汇总不同的值。<br>SELECT AVG(DISTINCT col1) AS avg_col<br>FROM mytable;<br>文本处理<br>函数    说明<br>LEFT()    左边的字符<br>RIGHT()    右边的字符<br>LOWER()    转换为小写字符<br>UPPER()    转换为大写字符<br>LTRIM()    去除左边的空格<br>RTRIM()    去除右边的空格<br>LENGTH()    长度<br>SOUNDEX()    转换为语音值<br>其中， SOUNDEX() 可以将一个字符串转换为描述其语音表示的字母数字模式。<br>SELECT *<br>FROM mytable<br>WHERE SOUNDEX(col1) = SOUNDEX(‘apple’)<br>日期和时间处理<br>•    日期格式：YYYY-MM-DD<br>•    时间格式：HH:MM:SS<br>函 数    说 明<br>ADDDATE()    增加一个日期（天、周等）<br>ADDTIME()    增加一个时间（时、分等）<br>CURDATE()    返回当前日期<br>CURTIME()    返回当前时间<br>DATE()    返回日期时间的日期部分<br>DATEDIFF()    计算两个日期之差<br>DATE_ADD()    高度灵活的日期运算函数<br>DATE_FORMAT()    返回一个格式化的日期或时间串<br>DAY()    返回一个日期的天数部分<br>DAYOFWEEK()    对于一个日期，返回对应的星期几<br>HOUR()    返回一个时间的小时部分<br>MINUTE()    返回一个时间的分钟部分<br>MONTH()    返回一个日期的月份部分<br>NOW()    返回当前日期和时间<br>SECOND()    返回一个时间的秒部分<br>TIME()    返回一个日期时间的时间部分<br>YEAR()    返回一个日期的年份部分<br>mysql&gt; SELECT NOW();<br>2018-4-14 20:25:11<br>数值处理<br>函数    说明<br>SIN()    正弦<br>COS()    余弦<br>TAN()    正切<br>ABS()    绝对值<br>SQRT()    平方根<br>MOD()    余数<br>EXP()    指数<br>PI()    圆周率<br>RAND()    随机数<br>十三、分组<br>把具有相同的数据值的行放在同一组中。<br>可以对同一分组数据使用汇总函数进行处理，例如求分组数据的平均值等。<br>指定的分组字段除了能按该字段进行分组，也会自动按该字段进行排序。<br>SELECT col, COUNT(<em>) AS num<br>FROM mytable<br>GROUP BY col;<br>GROUP BY 自动按分组字段进行排序，ORDER BY 也可以按汇总字段来进行排序。<br>SELECT col, COUNT(</em>) AS num<br>FROM mytable<br>GROUP BY col<br>ORDER BY num;<br>WHERE 过滤行，HAVING 过滤分组，行过滤应当先于分组过滤。<br>SELECT col, COUNT(<em>) AS num<br>FROM mytable<br>WHERE col &gt; 2<br>GROUP BY col<br>HAVING num &gt;= 2;<br>分组规定：<br>•    GROUP BY 子句出现在 WHERE 子句之后，ORDER BY 子句之前；<br>•    除了汇总字段外，SELECT 语句中的每一字段都必须在 GROUP BY 子句中给出；<br>•    NULL 的行会单独分为一组；<br>•    大多数 SQL 实现不支持 GROUP BY 列具有可变长度的数据类型。<br>十四、子查询<br>子查询中只能返回一个字段的数据。<br>可以将子查询的结果作为 WHRER 语句的过滤条件：<br>SELECT *<br>FROM mytable1<br>WHERE col1 IN (SELECT col2<br>               FROM mytable2);<br>下面的语句可以检索出客户的订单数量，子查询语句会对第一个查询检索出的每个客户执行一次：<br>SELECT cust_name, (SELECT COUNT(</em>)<br>                   FROM Orders<br>                   WHERE Orders.cust_id = Customers.cust_id)<br>                   AS orders_num<br>FROM Customers<br>ORDER BY cust_name;<br>十五、连接<br>连接用于连接多个表，使用 JOIN 关键字，并且条件语句使用 ON 而不是 WHERE。<br>连接可以替换子查询，并且比子查询的效率一般会更快。<br>可以用 AS 给列名、计算字段和表名取别名，给表名取别名是为了简化 SQL 语句以及连接相同表。<br>内连接<br>内连接又称等值连接，使用 INNER JOIN 关键字。<br>SELECT A.value, B.value<br>FROM tablea AS A INNER JOIN tableb AS B<br>ON A.key = B.key;<br>可以不明确使用 INNER JOIN，而使用普通查询并在 WHERE 中将两个表中要连接的列用等值方法连接起来。<br>SELECT A.value, B.value<br>FROM tablea AS A, tableb AS B<br>WHERE A.key = B.key;<br>自连接<br>自连接可以看成内连接的一种，只是连接的表是自身而已。<br>一张员工表，包含员工姓名和员工所属部门，要找出与 Jim 处在同一部门的所有员工姓名。<br>子查询版本<br>SELECT name<br>FROM employee<br>WHERE department = (<br>      SELECT department<br>      FROM employee<br>      WHERE name = “Jim”);<br>自连接版本<br>SELECT e1.name<br>FROM employee AS e1 INNER JOIN employee AS e2<br>ON e1.department = e2.department<br>      AND e2.name = “Jim”;<br>自然连接<br>自然连接是把同名列通过等值测试连接起来的，同名列可以有多个。<br>内连接和自然连接的区别：内连接提供连接的列，而自然连接自动连接所有同名列。<br>SELECT A.value, B.value<br>FROM tablea AS A NATURAL JOIN tableb AS B;<br>外连接<br>外连接保留了没有关联的那些行。分为左外连接，右外连接以及全外连接，左外连接就是保留左表没有关联的行。<br>检索所有顾客的订单信息，包括还没有订单信息的顾客。<br>SELECT Customers.cust_id, Customer.cust_name, Orders.order_id<br>FROM Customers LEFT OUTER JOIN Orders<br>ON Customers.cust_id = Orders.cust_id;<br>customers 表：<br>cust_id    cust_name<br>1    a<br>2    b<br>3    c<br>orders 表：<br>order_id    cust_id<br>1    1<br>2    1<br>3    3<br>4    3<br>结果：<br>cust_id    cust_name    order_id<br>1    a    1<br>1    a    2<br>3    c    3<br>3    c    4<br>2    b    Null<br>十六、组合查询<br>使用 UNION 来组合两个查询，如果第一个查询返回 M 行，第二个查询返回 N 行，那么组合查询的结果一般为 M+N 行。<br>每个查询必须包含相同的列、表达式和聚集函数。<br>默认会去除相同行，如果需要保留相同行，使用 UNION ALL。<br>只能包含一个 ORDER BY 子句，并且必须位于语句的最后。<br>SELECT col<br>FROM mytable<br>WHERE col = 1<br>UNION<br>SELECT col<br>FROM mytable<br>WHERE col =2;<br>十七、视图<br>视图是虚拟的表，本身不包含数据，也就不能对其进行索引操作。<br>对视图的操作和对普通表的操作一样。<br>视图具有如下好处：<br>•    简化复杂的 SQL 操作，比如复杂的连接；<br>•    只使用实际表的一部分数据；<br>•    通过只给用户访问视图的权限，保证数据的安全性；<br>•    更改数据格式和表示。<br>CREATE VIEW myview AS<br>SELECT Concat(col1, col2) AS concat_col, col3*col4 AS compute_col<br>FROM mytable<br>WHERE col5 = val;<br>十八、存储过程<br>存储过程可以看成是对一系列 SQL 操作的批处理。<br>使用存储过程的好处：<br>•    代码封装，保证了一定的安全性；<br>•    代码复用；<br>•    由于是预先编译，因此具有很高的性能。<br>命令行中创建存储过程需要自定义分隔符，因为命令行是以 ; 为结束符，而存储过程中也包含了分号，因此会错误把这部分分号当成是结束符，造成语法错误。<br>包含 in、out 和 inout 三种参数。<br>给变量赋值都需要用 select into 语句。<br>每次只能给一个变量赋值，不支持集合的操作。<br>delimiter //</p>
+<p>这是一段引用段落，将会被高亮显示<br>1<br>效果如下：</p>
 </blockquote>
-<p>create procedure myprocedure( out ret int )<br>    begin<br>        declare y int;<br>        select sum(col1)<br>        from mytable<br>        into y;<br>        select y*y into ret;<br>    end //</p>
-<p>delimiter ;<br>call myprocedure(@ret);<br>select @ret;<br>十九、游标<br>在存储过程中使用游标可以对一个结果集进行移动遍历。<br>游标主要用于交互式应用，其中用户需要对数据集中的任意行进行浏览和修改。<br>使用游标的四个步骤：</p>
+<p>这是一段引用段落，将会被高亮显示</p>
+<p>Markdown支持同时强调引用多个段落，可以按照如下方式书写：</p>
+<blockquote>
+<p>这是一段引用段落，将会被高亮显示</p>
+<p>这也是一段引用段落，也会被高亮显示<br>1<br>2<br>3<br>这是一段引用段落，将会被高亮显示</p>
+</blockquote>
+<p>这也是一段引用段落，也会被高亮显示</p>
+<p>区块引用还可以进行嵌套：</p>
+<p>这是一段引用段落，将会被高亮显示</p>
+<p>这是第二层引用段落，将会被高亮显示</p>
+<p>这是第三层引用段落，将会被高亮显示</p>
+<p>另外多行引用里面可以写其他语法，例如：</p>
+<p>列表第一项<br>列表第二项<br>二级列表项<br>列表第三项<br>超链接<br><a href="http://www.baidu.com" target="_blank" rel="noopener" title="超链接title">超链接显示文字</a><br>1<br>超链接显示文字</p>
+<p>提示：超链接title为浮动提示文字，一般情况可以不填写</p>
+<p>图片<br><img src="https://www.baidu.com/img/bd_logo1.png?where=super" alt="百度logo"><br>1</p>
+<p>图片和超链接的唯一区别就是在最前方添加一个感叹号</p>
+<p>无序列表<br>无序列表使用<em>、+、-标识，但是一般使用</em>来标识无序列表</p>
+<p>单级列表从最左开始(适用于无序列表)</p>
+<ul>
+<li><p>无序列表项</p>
+</li>
+<li><p>无序列表项</p>
+</li>
+<li><p>无序列表项<br>1<br>2<br>3<br>无序列表项<br>无序列表项<br>无序列表项<br>Markdown支持多级列表嵌套，但是建议一般不使用超过两级列表，另外建议两级列表从缩进3个空格开始(适用于无序列表)，如下所示：</p>
+<ul>
+<li>无序列表项<ul>
+<li>第二层列表项</li>
+<li>第二层列表项</li>
+</ul>
+</li>
+<li>无序列表项</li>
+<li>无序列表项<br>1<br>2<br>3<br>4<br>5<br>无序列表项<br>第二层列表项<br>第二层列表项<br>无序列表项<br>无序列表项<br>有序列表<br>有序列表使用数字.标识</li>
+</ul>
+</li>
+</ul>
 <ol>
-<li><p>声明游标，这个过程没有实际检索出数据；</p>
+<li>有序列表项1</li>
+<li>有序列表项2</li>
+<li>有序列表项3<br>1<br>2<br>3<br>有序列表项1<br>有序列表项2<br>有序列表项3<ol>
+<li>有序列表项1<ol>
+<li>有序列表项11</li>
+<li>有序列表项12</li>
+</ol>
 </li>
-<li><p>打开游标；</p>
-</li>
-<li><p>取出数据；</p>
-</li>
-<li><p>关闭游标；<br>delimiter //<br>create procedure myprocedure(out ret int)<br>begin<br>  declare done boolean default 0;</p>
-<p>  declare mycursor cursor for<br>  select col1 from mytable;</p>
-<h1 id="定义了一个-continue-handler，当-sqlstate-‘02000’-这个条件出现时，会执行-set-done-1"><a href="#定义了一个-continue-handler，当-sqlstate-‘02000’-这个条件出现时，会执行-set-done-1" class="headerlink" title="定义了一个 continue handler，当 sqlstate ‘02000’ 这个条件出现时，会执行 set done = 1"></a>定义了一个 continue handler，当 sqlstate ‘02000’ 这个条件出现时，会执行 set done = 1</h1><p>  declare continue handler for sqlstate ‘02000’ set done = 1;</p>
-<p>  open mycursor;</p>
-<p>  repeat</p>
-<pre><code>fetch mycursor into ret;
-select ret;</code></pre><p>  until done end repeat;</p>
-<p>  close mycursor;<br>end //<br>delimiter ;<br>二十、触发器<br>触发器会在某个表执行以下语句时而自动执行：DELETE、INSERT、UPDATE。<br>触发器必须指定在语句执行之前还是之后自动执行，之前执行使用 BEFORE 关键字，之后执行使用 AFTER 关键字。BEFORE 用于数据验证和净化，AFTER 用于审计跟踪，将修改记录到另外一张表中。<br>INSERT 触发器包含一个名为 NEW 的虚拟表。<br>CREATE TRIGGER mytrigger AFTER INSERT ON mytable<br>FOR EACH ROW SELECT NEW.col into @result;</p>
+<li>有序列表项3<br>1<br>2<br>3<br>4<br>有序列表项1<br>有序列表项11<br>有序列表项12<br>有序列表项3<br>分隔线</li>
+</ol>
 </li>
 </ol>
-<p>SELECT @result; – 获取结果<br>DELETE 触发器包含一个名为 OLD 的虚拟表，并且是只读的。<br>UPDATE 触发器包含一个名为 NEW 和一个名为 OLD 的虚拟表，其中 NEW 是可以被修改的，而 OLD 是只读的。<br>MySQL 不允许在触发器中使用 CALL 语句，也就是不能调用存储过程。<br>二十一、事务管理<br>基本术语：<br>•    事务（transaction）指一组 SQL 语句；<br>•    回退（rollback）指撤销指定 SQL 语句的过程；<br>•    提交（commit）指将未存储的 SQL 语句结果写入数据库表；<br>•    保留点（savepoint）指事务处理中设置的临时占位符（placeholder），你可以对它发布回退（与回退整个事务处理不同）。<br>不能回退 SELECT 语句，回退 SELECT 语句也没意义；也不能回退 CREATE 和 DROP 语句。<br>MySQL 的事务提交默认是隐式提交，每执行一条语句就把这条语句当成一个事务然后进行提交。当出现 START TRANSACTION 语句时，会关闭隐式提交；当 COMMIT 或 ROLLBACK 语句执行后，事务会自动关闭，重新恢复隐式提交。<br>设置 autocommit 为 0 可以取消自动提交；autocommit 标记是针对每个连接而不是针对服务器的。<br>如果没有设置保留点，ROLLBACK 会回退到 START TRANSACTION 语句处；如果设置了保留点，并且在 ROLLBACK 中指定该保留点，则会回退到该保留点。<br>START TRANSACTION<br>// …<br>SAVEPOINT delete1<br>// …<br>ROLLBACK TO delete1<br>// …<br>COMMIT<br>二十二、字符集<br>基本术语：<br>•    字符集为字母和符号的集合；<br>•    编码为某个字符集成员的内部表示；<br>•    校对字符指定如何比较，主要用于排序和分组。<br>除了给表指定字符集和校对外，也可以给列指定：<br>CREATE TABLE mytable<br>(col VARCHAR(10) CHARACTER SET latin COLLATE latin1_general_ci )<br>DEFAULT CHARACTER SET hebrew COLLATE hebrew_general_ci;<br>可以在排序、分组时指定校对：<br>SELECT *<br>FROM mytable<br>ORDER BY col COLLATE latin1_general_ci;<br>二十三、权限管理<br>MySQL 的账户信息保存在 mysql 这个数据库中。<br>USE mysql;<br>SELECT user FROM user;<br>创建账户<br>新创建的账户没有任何权限。<br>CREATE USER myuser IDENTIFIED BY ‘mypassword’;<br>修改账户名<br>RENAME USER myuser TO newuser;<br>删除账户<br>DROP USER myuser;<br>查看权限<br>SHOW GRANTS FOR myuser;<br>授予权限<br>账户用 username@host 的形式定义，username@% 使用的是默认主机名。<br>GRANT SELECT, INSERT ON mydatabase.* TO myuser;<br>删除权限<br>GRANT 和 REVOKE 可在几个层次上控制访问权限：<br>•    整个服务器，使用 GRANT ALL 和 REVOKE ALL；<br>•    整个数据库，使用 ON database.<em>；<br>•    特定的表，使用 ON database.table；<br>•    特定的列；<br>•    特定的存储过程。<br>REVOKE SELECT, INSERT ON mydatabase.</em> FROM myuser;<br>更改密码<br>必须使用 Password() 函数进行加密。<br>SET PASSWROD FOR myuser = Password(‘new_password’);<br>参考资料<br>•    BenForta. SQL 必知必会 [M]. 人民邮电出版社, 2013.<br>•    © 2020 GitHub, Inc.<br>•    Terms<br>•    Privacy<br>•    Security<br>•    Status<br>•    Help<br>•    Contact GitHub<br>•    Pricing<br>•    API<br>•    Training<br>•    Blog<br>•    About</p>
+<hr>
+<hr>
+<p>1<br>2<br>3<br>字体<br><em>这里包含斜体内容</em></p>
+<p><strong>这里包含加粗内容</strong><br>1<br>2<br>3<br>这里包含斜体内容</p>
+<p>这里包含加粗内容</p>
+<p>代码块<br>行内代码<br>使用单个反引号进行包裹行内代码，例如 var x = 10</p>
+<p>多行代码<br>可以通过三个反引号将代码包裹起来，反引号单独占一行，多一行单引号后面可以需要添加编程语言，详细的编程语言见<a href="http://pygments.org/languages/" target="_blank" rel="noopener">http://pygments.org/languages/</a></p>
+<p>package main</p>
+<p>import “fmt”</p>
+<p>func main() {<br>    fmt.Println(“Hello, World”)<br>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>表格<br>| 表头 | 表头 | 表头 |<br>| — | — | — |<br>| 内容 | 内容 | 内容 |<br>| 内容 | 内容 | 内容 |<br>| 内容 | 内容 | 内容 |<br>1<br>2<br>3<br>4<br>5<br>表头    表头    表头<br>内容    内容    内容<br>内容    内容    内容<br>内容    内容    内容<br>特殊符号<br>编辑环境<br>本文推荐使用VS Code进行Markdown文档的编辑</p>
+<p>插件<br>Markdown All in One：用于实现Markdown快捷键<br>markdownlint：markdown格式校验工具<br>Markdown PDF：markdown转换工具</p>
+<p>增强版本<br>团队编写规范<br>推荐写法<br>不推荐写法<br>持续集成(CI)<br>文档导出<br>vscode插件<br>安装Markdown PDF插件</p>
+<p>!!! note “注意事项”<br>暂时只在Windows上面验证成功，Ubuntu上使用会出现错误</p>
+<p>安装Markdown PDF插件插件时需要下载<a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf#install" target="_blank" rel="noopener">270MB左右的chrome执行文件</a>，<strong>必须VPN翻墙</strong> 才能比较顺利地完成下载，如果确实无法下载chrome可以<a href="https://www.jianshu.com/p/f1029409f468" target="_blank" rel="noopener">直接配置已经安装的chrome程序路径</a><br>1</p>
+<p>在VSCode界面输入Shift + Ctrl + P打开命令行输入框，接下来输入export展开如下命令：</p>
+<p>选择你想要转换到的格式的命令即可 (更简单的方式为在md文档中右键单击也会出现相关的命令)，转换成功后在同目录下会生成和markdown文档同名的其他格式文档。</p>
+<p>通过Markdown PDF插件导出的文档样式比较简单所以需要自定义CSS样式</p>
+<p>TODO: 补充自定义CSS样式相关内容</p>
+<p>pandoc<br>pandoc是一个通用的标记语言转换工具，能够在不同的文档格式间进行转换并且支持的格式众多，详见pandoc官网描述。</p>
+<p>这里我们使用pandoc将markdown文档转换为word格式，如果有其他转换需求可以参考pandoc详细使用手册。</p>
+<p>下载pandoc<br>因为pandoc官网下载速度，所以这里直接提供文件服务器下载地址</p>
+<p>pandoc客户端官方下载地址：github界面每个版本发布会提供对应的客户端msi安装程序(windows)和deb安装程序(linux)</p>
+<p>安装pandoc<br>windows版本客户端的安装双击msi程序即可，安装完成可以在cmd(或powershell)中输入如下命令进行安装验证：</p>
+<p>pandoc -v</p>
+<h1 id="安装正常时将会显示如下内容"><a href="#安装正常时将会显示如下内容" class="headerlink" title="安装正常时将会显示如下内容"></a>安装正常时将会显示如下内容</h1><p>pandoc.exe 2.7.2<br>Compiled with pandoc-types 1.17.5.4, texmath 0.11.2.2, skylighting 0.7.7<br>Default user data directory: C:\Users\xiaoyalun\AppData\Roaming\pandoc<br>Copyright (C) 2006-2019 John MacFarlane<br>Web:  <a href="http://pandoc.org" target="_blank" rel="noopener">http://pandoc.org</a><br>This is free software; see the source for copying conditions.<br>There is no warranty, not even for merchantability or fitness<br>for a particular purpose.<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>linux版本双击或者使用dpkg命令都可以安装deb客户端程序，安装完成也可以使用pandoc -v命令进行安装验证</p>
+<p>使用pandoc</p>
+<h1 id="查看帮助，直接查看pandoc命令可以帮助你快速入门"><a href="#查看帮助，直接查看pandoc命令可以帮助你快速入门" class="headerlink" title="查看帮助，直接查看pandoc命令可以帮助你快速入门"></a>查看帮助，直接查看pandoc命令可以帮助你快速入门</h1><p>pandoc –help</p>
+<h1 id="查看支持的输入文档格式"><a href="#查看支持的输入文档格式" class="headerlink" title="查看支持的输入文档格式"></a>查看支持的输入文档格式</h1><p>pandoc –list-input-formats</p>
+<h1 id="查看支持的输出文档格式"><a href="#查看支持的输出文档格式" class="headerlink" title="查看支持的输出文档格式"></a>查看支持的输出文档格式</h1><p>pandoc –list-ouput-formats</p>
+<h1 id="进行格式转换-以markdown转word为例"><a href="#进行格式转换-以markdown转word为例" class="headerlink" title="进行格式转换(以markdown转word为例)"></a>进行格式转换(以markdown转word为例)</h1><h1 id="f-指定源格式-from-，默认为markdown"><a href="#f-指定源格式-from-，默认为markdown" class="headerlink" title="-f 指定源格式(from)，默认为markdown"></a>-f 指定源格式(from)，默认为markdown</h1><h1 id="t-指定目的格式-to-，"><a href="#t-指定目的格式-to-，" class="headerlink" title="-t 指定目的格式(to)，"></a>-t 指定目的格式(to)，</h1><p>pandoc .\Markdown文档编写指南.md -f markdown -t docx -o Markdown文档编写指南.docx<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>如果你想通过pandoc直接将markdown转换为pdf文档可以参考Pandoc 安装与使用心得，但是pandoc将markdown格式转换到pdf使用的是latex语法，所以需要安装非常庞大的latex工具。</p>
+<p>本文档建议使用vscode插件将markdown转换为pdf，而不是采用pandoc的方式。<br>————————————————<br>版权声明：本文为CSDN博主「sanallen」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/sanallen/java/article/details/92081911" target="_blank" rel="noopener">https://blog.csdn.net/sanallen/java/article/details/92081911</a></p>
 
       
 
@@ -252,7 +316,7 @@ select ret;</code></pre><p>  until done end repeat;</p>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
         		</li>
       		
 		</ul>
@@ -308,7 +372,7 @@ select ret;</code></pre><p>  until done end repeat;</p>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/04/Sql/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/04/Markdown/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,18 +386,18 @@ select ret;</code></pre><p>  until done end repeat;</p>
   
 <nav id="article-nav">
   
-    <a href="/2020/07/04/Redis/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/25/Linux/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Redis
+          Linux
         
       </div>
     </a>
   
   
-    <a href="/2018/09/25/Linux/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux</div>
+    <a href="/2018/07/04/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%E5%B0%8F%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vim小记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -360,7 +424,7 @@ select ret;</code></pre><p>  until done end repeat;</p>
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Sql"><span class="toc-number">1.</span> <span class="toc-text">Sql</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一、基础"><span class="toc-number">2.</span> <span class="toc-text">一、基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注释"><span class="toc-number">3.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、创建表"><span class="toc-number">4.</span> <span class="toc-text">二、创建表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#int-类型，不为空，自增"><span class="toc-number">5.</span> <span class="toc-text">int 类型，不为空，自增</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#int-类型，不可为空，默认值为-1，不为空"><span class="toc-number">6.</span> <span class="toc-text">int 类型，不可为空，默认值为 1，不为空</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变长字符串类型，最长为-45-个字符，可以为空"><span class="toc-number">7.</span> <span class="toc-text">变长字符串类型，最长为 45 个字符，可以为空</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#日期类型，可为空"><span class="toc-number">8.</span> <span class="toc-text">日期类型，可为空</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置主键为-id"><span class="toc-number">9.</span> <span class="toc-text">设置主键为 id</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定义了一个-continue-handler，当-sqlstate-‘02000’-这个条件出现时，会执行-set-done-1"><span class="toc-number">10.</span> <span class="toc-text">定义了一个 continue handler，当 sqlstate ‘02000’ 这个条件出现时，会执行 set done &#x3D; 1</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown"><span class="toc-number">1.</span> <span class="toc-text">Markdown</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown文档编写指南"><span class="toc-number">2.</span> <span class="toc-text">Markdown文档编写指南</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文档"><span class="toc-number">3.</span> <span class="toc-text">参考文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Markdown-基本语法"><span class="toc-number">3.1.</span> <span class="toc-text">1.Markdown 基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-中文-markdown-编写格式规范命令行工具"><span class="toc-number">3.2.</span> <span class="toc-text">2.中文 markdown 编写格式规范命令行工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-markdownlint-Node-js-格式校验工具"><span class="toc-number">3.3.</span> <span class="toc-text">3.markdownlint Node.js 格式校验工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#三级标题"><span class="toc-number">3.3.1.</span> <span class="toc-text">三级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#四级标题"><span class="toc-number">3.3.1.1.</span> <span class="toc-text">四级标题</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一级标题"><span class="toc-number">4.</span> <span class="toc-text">一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二级标题"><span class="toc-number">4.1.</span> <span class="toc-text">二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#三级标题-1"><span class="toc-number">4.1.1.</span> <span class="toc-text">三级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#四级标题-1"><span class="toc-number">4.1.1.1.</span> <span class="toc-text">四级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#五级标题"><span class="toc-number">4.1.1.1.1.</span> <span class="toc-text">五级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#六级标题"><span class="toc-number">4.1.1.1.1.1.</span> <span class="toc-text">六级标题</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装正常时将会显示如下内容"><span class="toc-number">5.</span> <span class="toc-text">安装正常时将会显示如下内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看帮助，直接查看pandoc命令可以帮助你快速入门"><span class="toc-number">6.</span> <span class="toc-text">查看帮助，直接查看pandoc命令可以帮助你快速入门</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看支持的输入文档格式"><span class="toc-number">7.</span> <span class="toc-text">查看支持的输入文档格式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看支持的输出文档格式"><span class="toc-number">8.</span> <span class="toc-text">查看支持的输出文档格式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#进行格式转换-以markdown转word为例"><span class="toc-number">9.</span> <span class="toc-text">进行格式转换(以markdown转word为例)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#f-指定源格式-from-，默认为markdown"><span class="toc-number">10.</span> <span class="toc-text">-f 指定源格式(from)，默认为markdown</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#t-指定目的格式-to-，"><span class="toc-number">11.</span> <span class="toc-text">-t 指定目的格式(to)，</span></a></li></ol>
                     </div>
                 </span>
             </div>
