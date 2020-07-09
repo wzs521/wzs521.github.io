@@ -46,7 +46,9 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+ <div class="overlay"></div>
+  
+
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -97,7 +99,20 @@
 		</nav>
 	</header>		
 </div>
-
+<script >
+        var bglist = [];
+        bglist[0] = "/assets/leaves.jpg";
+        bglist[1] = "/assets/trees.jpg";
+        bglist[2] = "/assets/building.jpg";
+        setInterval('Getbg();', 3000);   //切换时间间隔，单位毫秒
+        function Getbg(){
+                    var bgindex = Math.round(Math.random()*2);
+                    //输出随机背景
+                    var bkg = document.getElementsByClassName("left-col")[0];  
+                    //这句话意思是找名字是left-col的class元素，找id可以用getElementById()
+                    bkg.style.backgroundImage="url("+ bglist[bgindex] +")";
+    }
+    </script>
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -318,18 +333,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/04/Sql/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/04/Redis/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Sql
+          Redis
         
       </div>
     </a>
   
   
-    <a href="/2018/09/25/Linux/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux</div>
+    <a href="/2020/07/04/Sql/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sql</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -486,6 +501,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -495,10 +514,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
