@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Sql | Hexo</title>
+  <title>Java并发 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Sql">
+  <meta name="description" content="Java并发线程（英语：thread）是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。同一进程中的多条线程将共享该进程中的全部系统资源，如虚拟地址空间，文件描述符和信号处理等等。但同一进程中的多个线程有各自的调用栈（call stack），自己的寄存器环境（regis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sql">
-<meta property="og:url" content="http://yoursite.com/2020/07/04/Sql/index.html">
+<meta property="og:title" content="Java并发">
+<meta property="og:url" content="http://yoursite.com/2018/01/21/Java%E5%B9%B6%E5%8F%91/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Sql">
+<meta property="og:description" content="Java并发线程（英语：thread）是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。同一进程中的多条线程将共享该进程中的全部系统资源，如虚拟地址空间，文件描述符和信号处理等等。但同一进程中的多个线程有各自的调用栈（call stack），自己的寄存器环境（regis">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-03T17:04:56.000Z">
-<meta property="article:modified_time" content="2020-07-03T17:51:42.993Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzs521/picgo/master/img/java%E5%B9%B6%E5%8F%91.png">
+<meta property="article:published_time" content="2018-01-20T23:55:00.000Z">
+<meta property="article:modified_time" content="2020-07-17T11:50:28.008Z">
 <meta property="article:author" content="Wanzesen">
-<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="并发">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzs521/picgo/master/img/java%E5%B9%B6%E5%8F%91.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -164,14 +167,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Sql" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java并发" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Sql
+      Java并发
     </h1>
   
 
@@ -187,47 +190,209 @@
 
 <!--显示阅读次数完毕-->
         
-        <a href="/2020/07/04/Sql/" class="archive-article-date">
-  	<time datetime="2020-07-03T17:04:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
+        <a href="/2018/01/21/Java%E5%B9%B6%E5%8F%91/" class="archive-article-date">
+  	<time datetime="2018-01-20T23:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Sql"><a href="#Sql" class="headerlink" title="Sql"></a>Sql</h1><a id="more"></a>
+        <h1 id="Java并发"><a href="#Java并发" class="headerlink" title="Java并发"></a>Java并发</h1><p>线程（英语：thread）是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。<br>同一进程中的多条线程将共享该进程中的全部系统资源，如虚拟地址空间，文件描述符和信号处理等等。但同一进程中的多个线程有各自的调用栈（call stack），自己的寄存器环境（register context），自己的线程本地存储（thread-local storage）。</p>
+<a id="more"></a>
+<h1 id="一、使用线程"><a href="#一、使用线程" class="headerlink" title="一、使用线程"></a>一、使用线程</h1><p>有三种使用线程的方法：</p>
+<p>实现 Runnable 接口；<br>实现 Callable 接口；<br>继承 Thread 类。<br>实现 Runnable 和 Callable 接口的类只能当做一个可以在线程中运行的任务，不是真正意义上的线程，因此最后还需要通过 Thread 来调用。可以理解为任务是通过线程驱动从而执行的。</p>
+<h2 id="实现-Runnable-接口"><a href="#实现-Runnable-接口" class="headerlink" title="实现 Runnable 接口"></a>实现 Runnable 接口</h2><p>需要实现接口中的 run() 方法。</p>
+<p>public class MyRunnable implements Runnable {<br>    @Override<br>    public void run() {<br>        // …<br>    }<br>}<br>使用 Runnable 实例再创建一个 Thread 实例，然后调用 Thread 实例的 start() 方法来启动线程。</p>
+<p>public static void main(String[] args) {<br>    MyRunnable instance = new MyRunnable();<br>    Thread thread = new Thread(instance);<br>    thread.start();<br>}</p>
+<h2 id="实现-Callable-接口"><a href="#实现-Callable-接口" class="headerlink" title="实现 Callable 接口"></a>实现 Callable 接口</h2><p>与 Runnable 相比，Callable 可以有返回值，返回值通过 FutureTask 进行封装。</p>
+<p>public class MyCallable implements Callable<Integer> {<br>    public Integer call() {<br>        return 123;<br>    }<br>}<br>public static void main(String[] args) throws ExecutionException, InterruptedException {<br>    MyCallable mc = new MyCallable();<br>    FutureTask<Integer> ft = new FutureTask&lt;&gt;(mc);<br>    Thread thread = new Thread(ft);<br>    thread.start();<br>    System.out.println(ft.get());<br>}</p>
+<h2 id="继承-Thread-类"><a href="#继承-Thread-类" class="headerlink" title="继承 Thread 类"></a>继承 Thread 类</h2><p>同样也是需要实现 run() 方法，因为 Thread 类也实现了 Runable 接口。</p>
+<p>当调用 start() 方法启动一个线程时，虚拟机会将该线程放入就绪队列中等待被调度，当一个线程被调度时会执行该线程的 run() 方法。</p>
+<p>public class MyThread extends Thread {<br>    public void run() {<br>        // …<br>    }<br>}<br>public static void main(String[] args) {<br>    MyThread mt = new MyThread();<br>    mt.start();<br>}<br>实现接口 VS 继承 Thread<br>实现接口会更好一些，因为：</p>
+<p>Java 不支持多重继承，因此继承了 Thread 类就无法继承其它类，但是可以实现多个接口；<br>类可能只要求可执行就行，继承整个 Thread 类开销过大。</p>
+<h1 id="二、基础线程机制"><a href="#二、基础线程机制" class="headerlink" title="二、基础线程机制"></a>二、基础线程机制</h1><h2 id="Executor"><a href="#Executor" class="headerlink" title="Executor"></a>Executor</h2><p>Executor 管理多个异步任务的执行，而无需程序员显式地管理线程的生命周期。这里的异步是指多个任务的执行互不干扰，不需要进行同步操作。</p>
+<p>主要有三种 Executor：</p>
+<p>CachedThreadPool：一个任务创建一个线程；<br>FixedThreadPool：所有任务只能使用固定大小的线程；<br>SingleThreadExecutor：相当于大小为 1 的 FixedThreadPool。<br>public static void main(String[] args) {<br>    ExecutorService executorService = Executors.newCachedThreadPool();<br>    for (int i = 0; i &lt; 5; i++) {<br>        executorService.execute(new MyRunnable());<br>    }<br>    executorService.shutdown();<br>}</p>
+<h2 id="Daemon"><a href="#Daemon" class="headerlink" title="Daemon"></a>Daemon</h2><p>守护线程是程序运行时在后台提供服务的线程，不属于程序中不可或缺的部分。</p>
+<p>当所有非守护线程结束时，程序也就终止，同时会杀死所有守护线程。</p>
+<p>main() 属于非守护线程。</p>
+<p>在线程启动之前使用 setDaemon() 方法可以将一个线程设置为守护线程。</p>
+<p>public static void main(String[] args) {<br>    Thread thread = new Thread(new MyRunnable());<br>    thread.setDaemon(true);<br>}</p>
+<h2 id="sleep"><a href="#sleep" class="headerlink" title="sleep()"></a>sleep()</h2><p>Thread.sleep(millisec) 方法会休眠当前正在执行的线程，millisec 单位为毫秒。</p>
+<p>sleep() 可能会抛出 InterruptedException，因为异常不能跨线程传播回 main() 中，因此必须在本地进行处理。线程中抛出的其它异常也同样需要在本地进行处理。</p>
+<p>public void run() {<br>    try {<br>        Thread.sleep(3000);<br>    } catch (InterruptedException e) {<br>        e.printStackTrace();<br>    }<br>}</p>
+<h2 id="yield"><a href="#yield" class="headerlink" title="yield()"></a>yield()</h2><p>对静态方法 Thread.yield() 的调用声明了当前线程已经完成了生命周期中最重要的部分，可以切换给其它线程来执行。该方法只是对线程调度器的一个建议，而且也只是建议具有相同优先级的其它线程可以运行。</p>
+<p>public void run() {<br>    Thread.yield();<br>}</p>
+<h1 id="三、中断"><a href="#三、中断" class="headerlink" title="三、中断"></a>三、中断</h1><p>一个线程执行完毕之后会自动结束，如果在运行过程中发生异常也会提前结束。</p>
+<h2 id="InterruptedException"><a href="#InterruptedException" class="headerlink" title="InterruptedException"></a>InterruptedException</h2><p>通过调用一个线程的 interrupt() 来中断该线程，如果该线程处于阻塞、限期等待或者无限期等待状态，那么就会抛出 InterruptedException，从而提前结束该线程。但是不能中断 I/O 阻塞和 synchronized 锁阻塞。</p>
+<p>对于以下代码，在 main() 中启动一个线程之后再中断它，由于线程中调用了 Thread.sleep() 方法，因此会抛出一个 InterruptedException，从而提前结束线程，不执行之后的语句。</p>
+<p>public class InterruptExample {</p>
+<pre><code>private static class MyThread1 extends Thread {
+    @Override
+    public void run() {
+        try {
+            Thread.sleep(2000);
+            System.out.println(&quot;Thread run&quot;);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre><p>}<br>public static void main(String[] args) throws InterruptedException {<br>    Thread thread1 = new MyThread1();<br>    thread1.start();<br>    thread1.interrupt();<br>    System.out.println(“Main run”);<br>}<br>Main run<br>java.lang.InterruptedException: sleep interrupted<br>    at java.lang.Thread.sleep(Native Method)<br>    at InterruptExample.lambda$main$0(InterruptExample.java:5)<br>    at InterruptExample$$Lambda$1/713338599.run(Unknown Source)<br>    at java.lang.Thread.run(Thread.java:745)</p>
+<h2 id="interrupted"><a href="#interrupted" class="headerlink" title="interrupted()"></a>interrupted()</h2><p>如果一个线程的 run() 方法执行一个无限循环，并且没有执行 sleep() 等会抛出 InterruptedException 的操作，那么调用线程的 interrupt() 方法就无法使线程提前结束。</p>
+<p>但是调用 interrupt() 方法会设置线程的中断标记，此时调用 interrupted() 方法会返回 true。因此可以在循环体中使用 interrupted() 方法来判断线程是否处于中断状态，从而提前结束线程。</p>
+<p>public class InterruptExample {</p>
+<pre><code>private static class MyThread2 extends Thread {
+    @Override
+    public void run() {
+        while (!interrupted()) {
+            // ..
+        }
+        System.out.println(&quot;Thread end&quot;);
+    }
+}</code></pre><p>}<br>public static void main(String[] args) throws InterruptedException {<br>    Thread thread2 = new MyThread2();<br>    thread2.start();<br>    thread2.interrupt();<br>}<br>Thread end</p>
+<h2 id="Executor-的中断操作"><a href="#Executor-的中断操作" class="headerlink" title="Executor 的中断操作"></a>Executor 的中断操作</h2><p>调用 Executor 的 shutdown() 方法会等待线程都执行完毕之后再关闭，但是如果调用的是 shutdownNow() 方法，则相当于调用每个线程的 interrupt() 方法。</p>
+<p>以下使用 Lambda 创建线程，相当于创建了一个匿名内部线程。</p>
+<p>public static void main(String[] args) {<br>    ExecutorService executorService = Executors.newCachedThreadPool();<br>    executorService.execute(() -&gt; {<br>        try {<br>            Thread.sleep(2000);<br>            System.out.println(“Thread run”);<br>        } catch (InterruptedException e) {<br>            e.printStackTrace();<br>        }<br>    });<br>    executorService.shutdownNow();<br>    System.out.println(“Main run”);<br>}<br>Main run<br>java.lang.InterruptedException: sleep interrupted<br>    at java.lang.Thread.sleep(Native Method)<br>    at ExecutorInterruptExample.lambda$main$0(ExecutorInterruptExample.java:9)<br>    at ExecutorInterruptExample$$Lambda$1/1160460865.run(Unknown Source)<br>    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)<br>    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br>    at java.lang.Thread.run(Thread.java:745)<br>如果只想中断 Executor 中的一个线程，可以通过使用 submit() 方法来提交一个线程，它会返回一个 Future&lt;?&gt; 对象，通过调用该对象的 cancel(true) 方法就可以中断线程。</p>
+<p>Future&lt;?&gt; future = executorService.submit(() -&gt; {<br>    // ..<br>});<br>future.cancel(true);</p>
+<h1 id="四、互斥同步"><a href="#四、互斥同步" class="headerlink" title="四、互斥同步"></a>四、互斥同步</h1><p>Java 提供了两种锁机制来控制多个线程对共享资源的互斥访问，第一个是 JVM 实现的 synchronized，而另一个是 JDK 实现的 ReentrantLock。</p>
+<h2 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h2><h3 id="1-同步一个代码块"><a href="#1-同步一个代码块" class="headerlink" title="1. 同步一个代码块"></a>1. 同步一个代码块</h3><p>public void func() {<br>    synchronized (this) {<br>        // …<br>    }<br>}<br>它只作用于同一个对象，如果调用两个对象上的同步代码块，就不会进行同步。</p>
+<p>对于以下代码，使用 ExecutorService 执行了两个线程，由于调用的是同一个对象的同步代码块，因此这两个线程会进行同步，当一个线程进入同步语句块时，另一个线程就必须等待。</p>
+<p>public class SynchronizedExample {</p>
+<pre><code>public void func1() {
+    synchronized (this) {
+        for (int i = 0; i &lt; 10; i++) {
+            System.out.print(i + &quot; &quot;);
+        }
+    }
+}</code></pre><p>}<br>public static void main(String[] args) {<br>    SynchronizedExample e1 = new SynchronizedExample();<br>    ExecutorService executorService = Executors.newCachedThreadPool();<br>    executorService.execute(() -&gt; e1.func1());<br>    executorService.execute(() -&gt; e1.func1());<br>}<br>0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9<br>对于以下代码，两个线程调用了不同对象的同步代码块，因此这两个线程就不需要同步。从输出结果可以看出，两个线程交叉执行。</p>
+<p>public static void main(String[] args) {<br>    SynchronizedExample e1 = new SynchronizedExample();<br>    SynchronizedExample e2 = new SynchronizedExample();<br>    ExecutorService executorService = Executors.newCachedThreadPool();<br>    executorService.execute(() -&gt; e1.func1());<br>    executorService.execute(() -&gt; e2.func1());<br>}<br>0 0 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9</p>
+<h3 id="2-同步一个方法"><a href="#2-同步一个方法" class="headerlink" title="2. 同步一个方法"></a>2. 同步一个方法</h3><p>public synchronized void func () {<br>    // …<br>}<br>它和同步代码块一样，作用于同一个对象。</p>
+<h3 id="3-同步一个类"><a href="#3-同步一个类" class="headerlink" title="3. 同步一个类"></a>3. 同步一个类</h3><p>public void func() {<br>    synchronized (SynchronizedExample.class) {<br>        // …<br>    }<br>}<br>作用于整个类，也就是说两个线程调用同一个类的不同对象上的这种同步语句，也会进行同步。</p>
+<p>public class SynchronizedExample {</p>
+<pre><code>public void func2() {
+    synchronized (SynchronizedExample.class) {
+        for (int i = 0; i &lt; 10; i++) {
+            System.out.print(i + &quot; &quot;);
+        }
+    }
+}</code></pre><p>}<br>public static void main(String[] args) {<br>    SynchronizedExample e1 = new SynchronizedExample();<br>    SynchronizedExample e2 = new SynchronizedExample();<br>    ExecutorService executorService = Executors.newCachedThreadPool();<br>    executorService.execute(() -&gt; e1.func2());<br>    executorService.execute(() -&gt; e2.func2());<br>}<br>0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9</p>
+<h3 id="4-同步一个静态方法"><a href="#4-同步一个静态方法" class="headerlink" title="4. 同步一个静态方法"></a>4. 同步一个静态方法</h3><p>public synchronized static void fun() {<br>    // …<br>}<br>作用于整个类。</p>
+<h2 id="ReentrantLock"><a href="#ReentrantLock" class="headerlink" title="ReentrantLock"></a>ReentrantLock</h2><p>ReentrantLock 是 java.util.concurrent（J.U.C）包中的锁。</p>
+<p>public class LockExample {</p>
+<pre><code>private Lock lock = new ReentrantLock();
 
-<h1 id="一、基础"><a href="#一、基础" class="headerlink" title="一、基础"></a>一、基础</h1><p>模式定义了数据如何存储、存储什么样的数据以及数据如何分解等信息，数据库和表都有模式。<br>主键的值不允许修改，也不允许复用（不能将已经删除的主键值赋给新数据行的主键）。<br>SQL（Structured Query Language)，标准 SQL 由 ANSI 标准委员会管理，从而称为 ANSI SQL。各个 DBMS 都有自己的实现，如 PL/SQL、Transact-SQL 等。<br>SQL 语句不区分大小写，但是数据库表名、列名和值是否区分依赖于具体的 DBMS 以及配置。<br>SQL 支持以下三种注释：</p>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>SELECT *<br>FROM mytable; – 注释<br>/* 注释1<br>   注释2 */<br>数据库创建与使用：<br>CREATE DATABASE test;<br>USE test;</p>
-<h1 id="二、创建表"><a href="#二、创建表" class="headerlink" title="二、创建表"></a>二、创建表</h1><p>CREATE TABLE mytable (</p>
-<h1 id="int-类型，不为空，自增"><a href="#int-类型，不为空，自增" class="headerlink" title="int 类型，不为空，自增"></a>int 类型，不为空，自增</h1><p>  id INT NOT NULL AUTO_INCREMENT,</p>
-<h1 id="int-类型，不可为空，默认值为-1，不为空"><a href="#int-类型，不可为空，默认值为-1，不为空" class="headerlink" title="int 类型，不可为空，默认值为 1，不为空"></a>int 类型，不可为空，默认值为 1，不为空</h1><p>  col1 INT NOT NULL DEFAULT 1,</p>
-<h1 id="变长字符串类型，最长为-45-个字符，可以为空"><a href="#变长字符串类型，最长为-45-个字符，可以为空" class="headerlink" title="变长字符串类型，最长为 45 个字符，可以为空"></a>变长字符串类型，最长为 45 个字符，可以为空</h1><p>  col2 VARCHAR(45) NULL,</p>
-<h1 id="日期类型，可为空"><a href="#日期类型，可为空" class="headerlink" title="日期类型，可为空"></a>日期类型，可为空</h1><p>  col3 DATE NULL,</p>
-<h1 id="设置主键为-id"><a href="#设置主键为-id" class="headerlink" title="设置主键为 id"></a>设置主键为 id</h1><p>  PRIMARY KEY (<code>id</code>));<br>三、修改表<br>添加列<br>ALTER TABLE mytable<br>ADD col CHAR(20);<br>删除列<br>ALTER TABLE mytable<br>DROP COLUMN col;<br>删除表<br>DROP TABLE mytable;<br>四、插入<br>普通插入<br>INSERT INTO mytable(col1, col2)<br>VALUES(val1, val2);<br>插入检索出来的数据<br>INSERT INTO mytable1(col1, col2)<br>SELECT col1, col2<br>FROM mytable2;<br>将一个表的内容插入到一个新表<br>CREATE TABLE newtable AS<br>SELECT * FROM mytable;<br>五、更新<br>UPDATE mytable<br>SET col = val<br>WHERE id = 1;<br>六、删除<br>DELETE FROM mytable<br>WHERE id = 1;<br>TRUNCATE TABLE 可以清空表，也就是删除所有行。<br>TRUNCATE TABLE mytable;<br>使用更新和删除操作时一定要用 WHERE 子句，不然会把整张表的数据都破坏。可以先用 SELECT 语句进行测试，防止错误删除。<br>七、查询<br>DISTINCT<br>相同值只会出现一次。它作用于所有列，也就是说所有列的值都相同才算相同。<br>SELECT DISTINCT col1, col2<br>FROM mytable;<br>LIMIT<br>限制返回的行数。可以有两个参数，第一个参数为起始行，从 0 开始；第二个参数为返回的总行数。<br>返回前 5 行：<br>SELECT *<br>FROM mytable<br>LIMIT 5;<br>SELECT *<br>FROM mytable<br>LIMIT 0, 5;<br>返回第 3 ~ 5 行：<br>SELECT *<br>FROM mytable<br>LIMIT 2, 3;<br>八、排序<br>•    ASC ：升序（默认）<br>•    DESC ：降序<br>可以按多个列进行排序，并且为每个列指定不同的排序方式：<br>SELECT *<br>FROM mytable<br>ORDER BY col1 DESC, col2 ASC;<br>九、过滤<br>不进行过滤的数据非常大，导致通过网络传输了多余的数据，从而浪费了网络带宽。因此尽量使用 SQL 语句来过滤不必要的数据，而不是传输所有的数据到客户端中然后由客户端进行过滤。<br>SELECT *<br>FROM mytable<br>WHERE col IS NULL;<br>下表显示了 WHERE 子句可用的操作符<br>操作符    说明<br>=    等于<br>&lt;    小于</p>
-<blockquote>
-<p>   大于<br>&lt;&gt; !=    不等于<br>&lt;= !&gt;    小于等于<br>= !&lt;    大于等于<br>BETWEEN    在两个值之间<br>IS NULL    为 NULL 值<br>应该注意到，NULL 与 0、空字符串都不同。<br>AND 和 OR 用于连接多个过滤条件。优先处理 AND，当一个过滤表达式涉及到多个 AND 和 OR 时，可以使用 () 来决定优先级，使得优先级关系更清晰。<br>IN 操作符用于匹配一组值，其后也可以接一个 SELECT 子句，从而匹配子查询得到的一组值。<br>NOT 操作符用于否定一个条件。<br>十、通配符<br>通配符也是用在过滤语句中，但它只能用于文本字段。<br>•    % 匹配 &gt;=0 个任意字符；<br>•    _ 匹配 ==1 个任意字符；<br>•    [ ] 可以匹配集合内的字符，例如 [ab] 将匹配字符 a 或者 b。用脱字符 ^ 可以对其进行否定，也就是不匹配集合内的字符。<br>使用 Like 来进行通配符匹配。<br>SELECT *<br>FROM mytable<br>WHERE col LIKE ‘[^AB]%’; – 不以 A 和 B 开头的任意文本<br>不要滥用通配符，通配符位于开头处匹配会非常慢。<br>十一、计算字段<br>在数据库服务器上完成数据的转换和格式化的工作往往比客户端上快得多，并且转换和格式化后的数据量更少的话可以减少网络通信量。<br>计算字段通常需要使用 AS 来取别名，否则输出的时候字段名为计算表达式。<br>SELECT col1 * col2 AS alias<br>FROM mytable;<br>CONCAT() 用于连接两个字段。许多数据库会使用空格把一个值填充为列宽，因此连接的结果会出现一些不必要的空格，使用 TRIM() 可以去除首尾空格。<br>SELECT CONCAT(TRIM(col1), ‘(‘, TRIM(col2), ‘)’) AS concat_col<br>FROM mytable;<br>十二、函数<br>各个 DBMS 的函数都是不相同的，因此不可移植，以下主要是 MySQL 的函数。<br>汇总<br>函 数    说 明<br>AVG()    返回某列的平均值<br>COUNT()    返回某列的行数<br>MAX()    返回某列的最大值<br>MIN()    返回某列的最小值<br>SUM()    返回某列值之和<br>AVG() 会忽略 NULL 行。<br>使用 DISTINCT 可以汇总不同的值。<br>SELECT AVG(DISTINCT col1) AS avg_col<br>FROM mytable;<br>文本处理<br>函数    说明<br>LEFT()    左边的字符<br>RIGHT()    右边的字符<br>LOWER()    转换为小写字符<br>UPPER()    转换为大写字符<br>LTRIM()    去除左边的空格<br>RTRIM()    去除右边的空格<br>LENGTH()    长度<br>SOUNDEX()    转换为语音值<br>其中， SOUNDEX() 可以将一个字符串转换为描述其语音表示的字母数字模式。<br>SELECT *<br>FROM mytable<br>WHERE SOUNDEX(col1) = SOUNDEX(‘apple’)<br>日期和时间处理<br>•    日期格式：YYYY-MM-DD<br>•    时间格式：HH:MM:SS<br>函 数    说 明<br>ADDDATE()    增加一个日期（天、周等）<br>ADDTIME()    增加一个时间（时、分等）<br>CURDATE()    返回当前日期<br>CURTIME()    返回当前时间<br>DATE()    返回日期时间的日期部分<br>DATEDIFF()    计算两个日期之差<br>DATE_ADD()    高度灵活的日期运算函数<br>DATE_FORMAT()    返回一个格式化的日期或时间串<br>DAY()    返回一个日期的天数部分<br>DAYOFWEEK()    对于一个日期，返回对应的星期几<br>HOUR()    返回一个时间的小时部分<br>MINUTE()    返回一个时间的分钟部分<br>MONTH()    返回一个日期的月份部分<br>NOW()    返回当前日期和时间<br>SECOND()    返回一个时间的秒部分<br>TIME()    返回一个日期时间的时间部分<br>YEAR()    返回一个日期的年份部分<br>mysql&gt; SELECT NOW();<br>2018-4-14 20:25:11<br>数值处理<br>函数    说明<br>SIN()    正弦<br>COS()    余弦<br>TAN()    正切<br>ABS()    绝对值<br>SQRT()    平方根<br>MOD()    余数<br>EXP()    指数<br>PI()    圆周率<br>RAND()    随机数<br>十三、分组<br>把具有相同的数据值的行放在同一组中。<br>可以对同一分组数据使用汇总函数进行处理，例如求分组数据的平均值等。<br>指定的分组字段除了能按该字段进行分组，也会自动按该字段进行排序。<br>SELECT col, COUNT(<em>) AS num<br>FROM mytable<br>GROUP BY col;<br>GROUP BY 自动按分组字段进行排序，ORDER BY 也可以按汇总字段来进行排序。<br>SELECT col, COUNT(</em>) AS num<br>FROM mytable<br>GROUP BY col<br>ORDER BY num;<br>WHERE 过滤行，HAVING 过滤分组，行过滤应当先于分组过滤。<br>SELECT col, COUNT(<em>) AS num<br>FROM mytable<br>WHERE col &gt; 2<br>GROUP BY col<br>HAVING num &gt;= 2;<br>分组规定：<br>•    GROUP BY 子句出现在 WHERE 子句之后，ORDER BY 子句之前；<br>•    除了汇总字段外，SELECT 语句中的每一字段都必须在 GROUP BY 子句中给出；<br>•    NULL 的行会单独分为一组；<br>•    大多数 SQL 实现不支持 GROUP BY 列具有可变长度的数据类型。<br>十四、子查询<br>子查询中只能返回一个字段的数据。<br>可以将子查询的结果作为 WHRER 语句的过滤条件：<br>SELECT *<br>FROM mytable1<br>WHERE col1 IN (SELECT col2<br>               FROM mytable2);<br>下面的语句可以检索出客户的订单数量，子查询语句会对第一个查询检索出的每个客户执行一次：<br>SELECT cust_name, (SELECT COUNT(</em>)<br>                   FROM Orders<br>                   WHERE Orders.cust_id = Customers.cust_id)<br>                   AS orders_num<br>FROM Customers<br>ORDER BY cust_name;<br>十五、连接<br>连接用于连接多个表，使用 JOIN 关键字，并且条件语句使用 ON 而不是 WHERE。<br>连接可以替换子查询，并且比子查询的效率一般会更快。<br>可以用 AS 给列名、计算字段和表名取别名，给表名取别名是为了简化 SQL 语句以及连接相同表。<br>内连接<br>内连接又称等值连接，使用 INNER JOIN 关键字。<br>SELECT A.value, B.value<br>FROM tablea AS A INNER JOIN tableb AS B<br>ON A.key = B.key;<br>可以不明确使用 INNER JOIN，而使用普通查询并在 WHERE 中将两个表中要连接的列用等值方法连接起来。<br>SELECT A.value, B.value<br>FROM tablea AS A, tableb AS B<br>WHERE A.key = B.key;<br>自连接<br>自连接可以看成内连接的一种，只是连接的表是自身而已。<br>一张员工表，包含员工姓名和员工所属部门，要找出与 Jim 处在同一部门的所有员工姓名。<br>子查询版本<br>SELECT name<br>FROM employee<br>WHERE department = (<br>      SELECT department<br>      FROM employee<br>      WHERE name = “Jim”);<br>自连接版本<br>SELECT e1.name<br>FROM employee AS e1 INNER JOIN employee AS e2<br>ON e1.department = e2.department<br>      AND e2.name = “Jim”;<br>自然连接<br>自然连接是把同名列通过等值测试连接起来的，同名列可以有多个。<br>内连接和自然连接的区别：内连接提供连接的列，而自然连接自动连接所有同名列。<br>SELECT A.value, B.value<br>FROM tablea AS A NATURAL JOIN tableb AS B;<br>外连接<br>外连接保留了没有关联的那些行。分为左外连接，右外连接以及全外连接，左外连接就是保留左表没有关联的行。<br>检索所有顾客的订单信息，包括还没有订单信息的顾客。<br>SELECT Customers.cust_id, Customer.cust_name, Orders.order_id<br>FROM Customers LEFT OUTER JOIN Orders<br>ON Customers.cust_id = Orders.cust_id;<br>customers 表：<br>cust_id    cust_name<br>1    a<br>2    b<br>3    c<br>orders 表：<br>order_id    cust_id<br>1    1<br>2    1<br>3    3<br>4    3<br>结果：<br>cust_id    cust_name    order_id<br>1    a    1<br>1    a    2<br>3    c    3<br>3    c    4<br>2    b    Null<br>十六、组合查询<br>使用 UNION 来组合两个查询，如果第一个查询返回 M 行，第二个查询返回 N 行，那么组合查询的结果一般为 M+N 行。<br>每个查询必须包含相同的列、表达式和聚集函数。<br>默认会去除相同行，如果需要保留相同行，使用 UNION ALL。<br>只能包含一个 ORDER BY 子句，并且必须位于语句的最后。<br>SELECT col<br>FROM mytable<br>WHERE col = 1<br>UNION<br>SELECT col<br>FROM mytable<br>WHERE col =2;<br>十七、视图<br>视图是虚拟的表，本身不包含数据，也就不能对其进行索引操作。<br>对视图的操作和对普通表的操作一样。<br>视图具有如下好处：<br>•    简化复杂的 SQL 操作，比如复杂的连接；<br>•    只使用实际表的一部分数据；<br>•    通过只给用户访问视图的权限，保证数据的安全性；<br>•    更改数据格式和表示。<br>CREATE VIEW myview AS<br>SELECT Concat(col1, col2) AS concat_col, col3*col4 AS compute_col<br>FROM mytable<br>WHERE col5 = val;<br>十八、存储过程<br>存储过程可以看成是对一系列 SQL 操作的批处理。<br>使用存储过程的好处：<br>•    代码封装，保证了一定的安全性；<br>•    代码复用；<br>•    由于是预先编译，因此具有很高的性能。<br>命令行中创建存储过程需要自定义分隔符，因为命令行是以 ; 为结束符，而存储过程中也包含了分号，因此会错误把这部分分号当成是结束符，造成语法错误。<br>包含 in、out 和 inout 三种参数。<br>给变量赋值都需要用 select into 语句。<br>每次只能给一个变量赋值，不支持集合的操作。<br>delimiter //</p>
-</blockquote>
-<p>create procedure myprocedure( out ret int )<br>    begin<br>        declare y int;<br>        select sum(col1)<br>        from mytable<br>        into y;<br>        select y*y into ret;<br>    end //</p>
-<p>delimiter ;<br>call myprocedure(@ret);<br>select @ret;<br>十九、游标<br>在存储过程中使用游标可以对一个结果集进行移动遍历。<br>游标主要用于交互式应用，其中用户需要对数据集中的任意行进行浏览和修改。<br>使用游标的四个步骤：</p>
-<ol>
-<li><p>声明游标，这个过程没有实际检索出数据；</p>
-</li>
-<li><p>打开游标；</p>
-</li>
-<li><p>取出数据；</p>
-</li>
-<li><p>关闭游标；<br>delimiter //<br>create procedure myprocedure(out ret int)<br>begin<br>  declare done boolean default 0;</p>
-<p>  declare mycursor cursor for<br>  select col1 from mytable;</p>
-<h1 id="定义了一个-continue-handler，当-sqlstate-‘02000’-这个条件出现时，会执行-set-done-1"><a href="#定义了一个-continue-handler，当-sqlstate-‘02000’-这个条件出现时，会执行-set-done-1" class="headerlink" title="定义了一个 continue handler，当 sqlstate ‘02000’ 这个条件出现时，会执行 set done = 1"></a>定义了一个 continue handler，当 sqlstate ‘02000’ 这个条件出现时，会执行 set done = 1</h1><p>  declare continue handler for sqlstate ‘02000’ set done = 1;</p>
-<p>  open mycursor;</p>
-<p>  repeat</p>
-<pre><code>fetch mycursor into ret;
-select ret;</code></pre><p>  until done end repeat;</p>
-<p>  close mycursor;<br>end //<br>delimiter ;<br>二十、触发器<br>触发器会在某个表执行以下语句时而自动执行：DELETE、INSERT、UPDATE。<br>触发器必须指定在语句执行之前还是之后自动执行，之前执行使用 BEFORE 关键字，之后执行使用 AFTER 关键字。BEFORE 用于数据验证和净化，AFTER 用于审计跟踪，将修改记录到另外一张表中。<br>INSERT 触发器包含一个名为 NEW 的虚拟表。<br>CREATE TRIGGER mytrigger AFTER INSERT ON mytable<br>FOR EACH ROW SELECT NEW.col into @result;</p>
-</li>
-</ol>
-<p>SELECT @result; – 获取结果<br>DELETE 触发器包含一个名为 OLD 的虚拟表，并且是只读的。<br>UPDATE 触发器包含一个名为 NEW 和一个名为 OLD 的虚拟表，其中 NEW 是可以被修改的，而 OLD 是只读的。<br>MySQL 不允许在触发器中使用 CALL 语句，也就是不能调用存储过程。<br>二十一、事务管理<br>基本术语：<br>•    事务（transaction）指一组 SQL 语句；<br>•    回退（rollback）指撤销指定 SQL 语句的过程；<br>•    提交（commit）指将未存储的 SQL 语句结果写入数据库表；<br>•    保留点（savepoint）指事务处理中设置的临时占位符（placeholder），你可以对它发布回退（与回退整个事务处理不同）。<br>不能回退 SELECT 语句，回退 SELECT 语句也没意义；也不能回退 CREATE 和 DROP 语句。<br>MySQL 的事务提交默认是隐式提交，每执行一条语句就把这条语句当成一个事务然后进行提交。当出现 START TRANSACTION 语句时，会关闭隐式提交；当 COMMIT 或 ROLLBACK 语句执行后，事务会自动关闭，重新恢复隐式提交。<br>设置 autocommit 为 0 可以取消自动提交；autocommit 标记是针对每个连接而不是针对服务器的。<br>如果没有设置保留点，ROLLBACK 会回退到 START TRANSACTION 语句处；如果设置了保留点，并且在 ROLLBACK 中指定该保留点，则会回退到该保留点。<br>START TRANSACTION<br>// …<br>SAVEPOINT delete1<br>// …<br>ROLLBACK TO delete1<br>// …<br>COMMIT<br>二十二、字符集<br>基本术语：<br>•    字符集为字母和符号的集合；<br>•    编码为某个字符集成员的内部表示；<br>•    校对字符指定如何比较，主要用于排序和分组。<br>除了给表指定字符集和校对外，也可以给列指定：<br>CREATE TABLE mytable<br>(col VARCHAR(10) CHARACTER SET latin COLLATE latin1_general_ci )<br>DEFAULT CHARACTER SET hebrew COLLATE hebrew_general_ci;<br>可以在排序、分组时指定校对：<br>SELECT *<br>FROM mytable<br>ORDER BY col COLLATE latin1_general_ci;<br>二十三、权限管理<br>MySQL 的账户信息保存在 mysql 这个数据库中。<br>USE mysql;<br>SELECT user FROM user;<br>创建账户<br>新创建的账户没有任何权限。<br>CREATE USER myuser IDENTIFIED BY ‘mypassword’;<br>修改账户名<br>RENAME USER myuser TO newuser;<br>删除账户<br>DROP USER myuser;<br>查看权限<br>SHOW GRANTS FOR myuser;<br>授予权限<br>账户用 username@host 的形式定义，username@% 使用的是默认主机名。<br>GRANT SELECT, INSERT ON mydatabase.* TO myuser;<br>删除权限<br>GRANT 和 REVOKE 可在几个层次上控制访问权限：<br>•    整个服务器，使用 GRANT ALL 和 REVOKE ALL；<br>•    整个数据库，使用 ON database.<em>；<br>•    特定的表，使用 ON database.table；<br>•    特定的列；<br>•    特定的存储过程。<br>REVOKE SELECT, INSERT ON mydatabase.</em> FROM myuser;<br>更改密码<br>必须使用 Password() 函数进行加密。<br>SET PASSWROD FOR myuser = Password(‘new_password’);<br>参考资料<br>•    BenForta. SQL 必知必会 [M]. 人民邮电出版社, 2013.<br>•    © 2020 GitHub, Inc.<br>•    Terms<br>•    Privacy<br>•    Security<br>•    Status<br>•    Help<br>•    Contact GitHub<br>•    Pricing<br>•    API<br>•    Training<br>•    Blog<br>•    About</p>
+public void func() {
+    lock.lock();
+    try {
+        for (int i = 0; i &lt; 10; i++) {
+            System.out.print(i + &quot; &quot;);
+        }
+    } finally {
+        lock.unlock(); // 确保释放锁，从而避免发生死锁。
+    }
+}</code></pre><p>}<br>public static void main(String[] args) {<br>    LockExample lockExample = new LockExample();<br>    ExecutorService executorService = Executors.newCachedThreadPool();<br>    executorService.execute(() -&gt; lockExample.func());<br>    executorService.execute(() -&gt; lockExample.func());<br>}<br>0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9</p>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><h3 id="1-锁的实现"><a href="#1-锁的实现" class="headerlink" title="1. 锁的实现"></a>1. 锁的实现</h3><p>synchronized 是 JVM 实现的，而 ReentrantLock 是 JDK 实现的。</p>
+<h3 id="2-性能"><a href="#2-性能" class="headerlink" title="2. 性能"></a>2. 性能</h3><p>新版本 Java 对 synchronized 进行了很多优化，例如自旋锁等，synchronized 与 ReentrantLock 大致相同。</p>
+<h3 id="3-等待可中断"><a href="#3-等待可中断" class="headerlink" title="3. 等待可中断"></a>3. 等待可中断</h3><p>当持有锁的线程长期不释放锁的时候，正在等待的线程可以选择放弃等待，改为处理其他事情。</p>
+<p>ReentrantLock 可中断，而 synchronized 不行。</p>
+<h3 id="4-公平锁"><a href="#4-公平锁" class="headerlink" title="4. 公平锁"></a>4. 公平锁</h3><p>公平锁是指多个线程在等待同一个锁时，必须按照申请锁的时间顺序来依次获得锁。</p>
+<p>synchronized 中的锁是非公平的，ReentrantLock 默认情况下也是非公平的，但是也可以是公平的。</p>
+<h3 id="5-锁绑定多个条件"><a href="#5-锁绑定多个条件" class="headerlink" title="5. 锁绑定多个条件"></a>5. 锁绑定多个条件</h3><p>一个 ReentrantLock 可以同时绑定多个 Condition 对象。</p>
+<p>使用选择<br>除非需要使用 ReentrantLock 的高级功能，否则优先使用 synchronized。这是因为 synchronized 是 JVM 实现的一种锁机制，JVM 原生地支持它，而 ReentrantLock 不是所有的 JDK 版本都支持。并且使用 synchronized 不用担心没有释放锁而导致死锁问题，因为 JVM 会确保锁的释放。</p>
+<h1 id="五、线程之间的协作"><a href="#五、线程之间的协作" class="headerlink" title="五、线程之间的协作"></a>五、线程之间的协作</h1><p>当多个线程可以一起工作去解决某个问题时，如果某些部分必须在其它部分之前完成，那么就需要对线程进行协调。</p>
+<h2 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h2><p>在线程中调用另一个线程的 join() 方法，会将当前线程挂起，而不是忙等待，直到目标线程结束。</p>
+<p>对于以下代码，虽然 b 线程先启动，但是因为在 b 线程中调用了 a 线程的 join() 方法，b 线程会等待 a 线程结束才继续执行，因此最后能够保证 a 线程的输出先于 b 线程的输出。</p>
+<p>public class JoinExample {</p>
+<pre><code>private class A extends Thread {
+    @Override
+    public void run() {
+        System.out.println(&quot;A&quot;);
+    }
+}
+
+private class B extends Thread {
+
+    private A a;
+
+    B(A a) {
+        this.a = a;
+    }
+
+    @Override
+    public void run() {
+        try {
+            a.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(&quot;B&quot;);
+    }
+}
+
+public void test() {
+    A a = new A();
+    B b = new B(a);
+    b.start();
+    a.start();
+}</code></pre><p>}<br>public static void main(String[] args) {<br>    JoinExample example = new JoinExample();<br>    example.test();<br>}<br>A<br>B</p>
+<h2 id="wait-notify-notifyAll"><a href="#wait-notify-notifyAll" class="headerlink" title="wait() notify() notifyAll()"></a>wait() notify() notifyAll()</h2><p>调用 wait() 使得线程等待某个条件满足，线程在等待时会被挂起，当其他线程的运行使得这个条件满足时，其它线程会调用 notify() 或者 notifyAll() 来唤醒挂起的线程。</p>
+<p>它们都属于 Object 的一部分，而不属于 Thread。</p>
+<p>只能用在同步方法或者同步控制块中使用，否则会在运行时抛出 IllegalMonitorStateException。</p>
+<p>使用 wait() 挂起期间，线程会释放锁。这是因为，如果没有释放锁，那么其它线程就无法进入对象的同步方法或者同步控制块中，那么就无法执行 notify() 或者 notifyAll() 来唤醒挂起的线程，造成死锁。</p>
+<p>public class WaitNotifyExample {</p>
+<pre><code>public synchronized void before() {
+    System.out.println(&quot;before&quot;);
+    notifyAll();
+}
+
+public synchronized void after() {
+    try {
+        wait();
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+    System.out.println(&quot;after&quot;);
+}</code></pre><p>}<br>public static void main(String[] args) {<br>    ExecutorService executorService = Executors.newCachedThreadPool();<br>    WaitNotifyExample example = new WaitNotifyExample();<br>    executorService.execute(() -&gt; example.after());<br>    executorService.execute(() -&gt; example.before());<br>}<br>before<br>after</p>
+<h4 id="wait-和-sleep-的区别"><a href="#wait-和-sleep-的区别" class="headerlink" title="wait() 和 sleep() 的区别"></a>wait() 和 sleep() 的区别</h4><p>wait() 是 Object 的方法，而 sleep() 是 Thread 的静态方法；<br>wait() 会释放锁，sleep() 不会。</p>
+<h3 id="await-signal-signalAll"><a href="#await-signal-signalAll" class="headerlink" title="await() signal() signalAll()"></a>await() signal() signalAll()</h3><p>java.util.concurrent 类库中提供了 Condition 类来实现线程之间的协调，可以在 Condition 上调用 await() 方法使线程等待，其它线程调用 signal() 或 signalAll() 方法唤醒等待的线程。</p>
+<p>相比于 wait() 这种等待方式，await() 可以指定等待的条件，因此更加灵活。</p>
+<p>使用 Lock 来获取一个 Condition 对象。</p>
+<p>public class AwaitSignalExample {</p>
+<pre><code>private Lock lock = new ReentrantLock();
+private Condition condition = lock.newCondition();
+
+public void before() {
+    lock.lock();
+    try {
+        System.out.println(&quot;before&quot;);
+        condition.signalAll();
+    } finally {
+        lock.unlock();
+    }
+}
+
+public void after() {
+    lock.lock();
+    try {
+        condition.await();
+        System.out.println(&quot;after&quot;);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    } finally {
+        lock.unlock();
+    }
+}</code></pre><p>}<br>public static void main(String[] args) {<br>    ExecutorService executorService = Executors.newCachedThreadPool();<br>    AwaitSignalExample example = new AwaitSignalExample();<br>    executorService.execute(() -&gt; example.after());<br>    executorService.execute(() -&gt; example.before());<br>}<br>before<br>after</p>
+<h1 id="六、线程状态"><a href="#六、线程状态" class="headerlink" title="六、线程状态"></a>六、线程状态</h1><p>一个线程只能处于一种状态，并且这里的线程状态特指 Java 虚拟机的线程状态，不能反映线程在特定操作系统下的状态。</p>
+<h2 id="新建（NEW）"><a href="#新建（NEW）" class="headerlink" title="新建（NEW）"></a>新建（NEW）</h2><p>创建后尚未启动。</p>
+<h2 id="可运行（RUNABLE）"><a href="#可运行（RUNABLE）" class="headerlink" title="可运行（RUNABLE）"></a>可运行（RUNABLE）</h2><p>正在 Java 虚拟机中运行。但是在操作系统层面，它可能处于运行状态，也可能等待资源调度（例如处理器资源），资源调度完成就进入运行状态。所以该状态的可运行是指可以被运行，具体有没有运行要看底层操作系统的资源调度。</p>
+<h2 id="阻塞（BLOCKED）"><a href="#阻塞（BLOCKED）" class="headerlink" title="阻塞（BLOCKED）"></a>阻塞（BLOCKED）</h2><p>请求获取 monitor lock 从而进入 synchronized 函数或者代码块，但是其它线程已经占用了该 monitor lock，所以出于阻塞状态。要结束该状态进入从而 RUNABLE 需要其他线程释放 monitor lock。</p>
+<h2 id="无限期等待（WAITING）"><a href="#无限期等待（WAITING）" class="headerlink" title="无限期等待（WAITING）"></a>无限期等待（WAITING）</h2><p>等待其它线程显式地唤醒。</p>
+<p>阻塞和等待的区别在于，阻塞是被动的，它是在等待获取 monitor lock。而等待是主动的，通过调用 Object.wait() 等方法进入。</p>
+<p>进入方法    退出方法<br>没有设置 Timeout 参数的 Object.wait() 方法    Object.notify() / Object.notifyAll()<br>没有设置 Timeout 参数的 Thread.join() 方法    被调用的线程执行完毕<br>LockSupport.park() 方法    LockSupport.unpark(Thread)</p>
+<h2 id="限期等待（TIMED-WAITING）"><a href="#限期等待（TIMED-WAITING）" class="headerlink" title="限期等待（TIMED_WAITING）"></a>限期等待（TIMED_WAITING）</h2><p>无需等待其它线程显式地唤醒，在一定时间之后会被系统自动唤醒。</p>
+<p><img src="https://raw.githubusercontent.com/wzs521/picgo/master/img/java%E5%B9%B6%E5%8F%91.png" alt=""><br>调用 Thread.sleep() 方法使线程进入限期等待状态时，常常用“使一个线程睡眠”进行描述。调用 Object.wait() 方法使线程进入限期等待或者无限期等待时，常常用“挂起一个线程”进行描述。睡眠和挂起是用来描述行为，而阻塞和等待用来描述状态。   </p>
+<h2 id="死亡（TERMINATED）"><a href="#死亡（TERMINATED）" class="headerlink" title="死亡（TERMINATED）"></a>死亡（TERMINATED）</h2><p>可以是线程结束任务之后自己结束，或者产生了异常而结束。</p>
 
       
 
@@ -272,7 +437,11 @@ select ret;</code></pre><p>  until done end repeat;</p>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
         		</li>
       		
 		</ul>
@@ -328,7 +497,7 @@ select ret;</code></pre><p>  until done end repeat;</p>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wzs521.github.io/2020/07/04/Sql/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wzs521.github.io/2018/01/21/Java%E5%B9%B6%E5%8F%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -342,18 +511,18 @@ select ret;</code></pre><p>  until done end repeat;</p>
   
 <nav id="article-nav">
   
-    <a href="/2020/07/04/git%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/04/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%E5%B0%8F%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          git工具使用
+          Vim小记
         
       </div>
     </a>
   
   
-    <a href="/2020/01/25/%E5%8D%95%E5%90%91%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">单向环形链表</div>
+    <a href="/2012/12/19/%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">圣诞到了，帮修改一个头像</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -380,7 +549,7 @@ select ret;</code></pre><p>  until done end repeat;</p>
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Sql"><span class="toc-number">1.</span> <span class="toc-text">Sql</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一、基础"><span class="toc-number">2.</span> <span class="toc-text">一、基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注释"><span class="toc-number">3.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、创建表"><span class="toc-number">4.</span> <span class="toc-text">二、创建表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#int-类型，不为空，自增"><span class="toc-number">5.</span> <span class="toc-text">int 类型，不为空，自增</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#int-类型，不可为空，默认值为-1，不为空"><span class="toc-number">6.</span> <span class="toc-text">int 类型，不可为空，默认值为 1，不为空</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变长字符串类型，最长为-45-个字符，可以为空"><span class="toc-number">7.</span> <span class="toc-text">变长字符串类型，最长为 45 个字符，可以为空</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#日期类型，可为空"><span class="toc-number">8.</span> <span class="toc-text">日期类型，可为空</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置主键为-id"><span class="toc-number">9.</span> <span class="toc-text">设置主键为 id</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定义了一个-continue-handler，当-sqlstate-‘02000’-这个条件出现时，会执行-set-done-1"><span class="toc-number">10.</span> <span class="toc-text">定义了一个 continue handler，当 sqlstate ‘02000’ 这个条件出现时，会执行 set done &#x3D; 1</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java并发"><span class="toc-number">1.</span> <span class="toc-text">Java并发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一、使用线程"><span class="toc-number">2.</span> <span class="toc-text">一、使用线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#实现-Runnable-接口"><span class="toc-number">2.1.</span> <span class="toc-text">实现 Runnable 接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现-Callable-接口"><span class="toc-number">2.2.</span> <span class="toc-text">实现 Callable 接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承-Thread-类"><span class="toc-number">2.3.</span> <span class="toc-text">继承 Thread 类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、基础线程机制"><span class="toc-number">3.</span> <span class="toc-text">二、基础线程机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Executor"><span class="toc-number">3.1.</span> <span class="toc-text">Executor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Daemon"><span class="toc-number">3.2.</span> <span class="toc-text">Daemon</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sleep"><span class="toc-number">3.3.</span> <span class="toc-text">sleep()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yield"><span class="toc-number">3.4.</span> <span class="toc-text">yield()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、中断"><span class="toc-number">4.</span> <span class="toc-text">三、中断</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#InterruptedException"><span class="toc-number">4.1.</span> <span class="toc-text">InterruptedException</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#interrupted"><span class="toc-number">4.2.</span> <span class="toc-text">interrupted()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Executor-的中断操作"><span class="toc-number">4.3.</span> <span class="toc-text">Executor 的中断操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、互斥同步"><span class="toc-number">5.</span> <span class="toc-text">四、互斥同步</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#synchronized"><span class="toc-number">5.1.</span> <span class="toc-text">synchronized</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-同步一个代码块"><span class="toc-number">5.1.1.</span> <span class="toc-text">1. 同步一个代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-同步一个方法"><span class="toc-number">5.1.2.</span> <span class="toc-text">2. 同步一个方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-同步一个类"><span class="toc-number">5.1.3.</span> <span class="toc-text">3. 同步一个类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-同步一个静态方法"><span class="toc-number">5.1.4.</span> <span class="toc-text">4. 同步一个静态方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ReentrantLock"><span class="toc-number">5.2.</span> <span class="toc-text">ReentrantLock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#比较"><span class="toc-number">5.3.</span> <span class="toc-text">比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-锁的实现"><span class="toc-number">5.3.1.</span> <span class="toc-text">1. 锁的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-性能"><span class="toc-number">5.3.2.</span> <span class="toc-text">2. 性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-等待可中断"><span class="toc-number">5.3.3.</span> <span class="toc-text">3. 等待可中断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-公平锁"><span class="toc-number">5.3.4.</span> <span class="toc-text">4. 公平锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-锁绑定多个条件"><span class="toc-number">5.3.5.</span> <span class="toc-text">5. 锁绑定多个条件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、线程之间的协作"><span class="toc-number">6.</span> <span class="toc-text">五、线程之间的协作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#join"><span class="toc-number">6.1.</span> <span class="toc-text">join()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wait-notify-notifyAll"><span class="toc-number">6.2.</span> <span class="toc-text">wait() notify() notifyAll()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#wait-和-sleep-的区别"><span class="toc-number">6.2.0.1.</span> <span class="toc-text">wait() 和 sleep() 的区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#await-signal-signalAll"><span class="toc-number">6.2.1.</span> <span class="toc-text">await() signal() signalAll()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、线程状态"><span class="toc-number">7.</span> <span class="toc-text">六、线程状态</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#新建（NEW）"><span class="toc-number">7.1.</span> <span class="toc-text">新建（NEW）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可运行（RUNABLE）"><span class="toc-number">7.2.</span> <span class="toc-text">可运行（RUNABLE）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阻塞（BLOCKED）"><span class="toc-number">7.3.</span> <span class="toc-text">阻塞（BLOCKED）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#无限期等待（WAITING）"><span class="toc-number">7.4.</span> <span class="toc-text">无限期等待（WAITING）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#限期等待（TIMED-WAITING）"><span class="toc-number">7.5.</span> <span class="toc-text">限期等待（TIMED_WAITING）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死亡（TERMINATED）"><span class="toc-number">7.6.</span> <span class="toc-text">死亡（TERMINATED）</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
