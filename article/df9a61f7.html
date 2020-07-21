@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/2 | Hexo</title>
+  <title>索引 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/02/index.html">
+  <meta name="description" content="索引索引是帮助MySQL高效获取数据的排好序的数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="索引">
+<meta property="og:url" content="http://yoursite.com/article/df9a61f7.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="索引索引是帮助MySQL高效获取数据的排好序的数据结构">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzs521/picgo/master/img/%E7%B4%A2%E5%BC%95.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzs521/picgo/master/img/%E7%B4%A2%E5%BC%95.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzs521/picgo/master/img/btree.png">
+<meta property="article:published_time" content="2019-03-25T02:55:00.000Z">
+<meta property="article:modified_time" content="2020-07-21T08:43:09.219Z">
 <meta property="article:author" content="Wanzesen">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="索引">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzs521/picgo/master/img/%E7%B4%A2%E5%BC%95.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -151,23 +161,26 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-索引" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
   
   
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<!--显示阅读次数-->
+      <header class="article-header">
+	  
+	  
+        
+  
+    <h1 class="article-title" itemprop="name">
+      索引
+    </h1>
+  
+
+		
+        
+		
+		
+        <!--显示阅读次数-->
 
   <br/>
   <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
@@ -178,47 +191,200 @@
   </a>
 
 <!--显示阅读次数完毕-->
-<a href="/article/515d78b5.html" class="archive-article-date">
-  	<time datetime="2019-02-14T05:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-14</time>
+<a href="/article/df9a61f7.html" class="archive-article-date">
+  	<time datetime="2019-03-25T02:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/515d78b5.html">Java虚拟机</a>
-    </h1>
-  
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h1 id="索引是帮助MySQL高效获取数据的排好序的数据结构"><a href="#索引是帮助MySQL高效获取数据的排好序的数据结构" class="headerlink" title="索引是帮助MySQL高效获取数据的排好序的数据结构"></a>索引是帮助MySQL高效获取数据的排好序的数据结构</h1><a id="more"></a>
+<h1 id="索引数据结构"><a href="#索引数据结构" class="headerlink" title="索引数据结构"></a>索引数据结构</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h2 id="红黑树（动辄数据库就是几十万几百万的数据，数据量过大，树的高度高，）"><a href="#红黑树（动辄数据库就是几十万几百万的数据，数据量过大，树的高度高，）" class="headerlink" title="红黑树（动辄数据库就是几十万几百万的数据，数据量过大，树的高度高，）"></a>红黑树（动辄数据库就是几十万几百万的数据，数据量过大，树的高度高，）</h2><h2 id="Hash表"><a href="#Hash表" class="headerlink" title="Hash表"></a>Hash表</h2><h2 id="B-tree"><a href="#B-tree" class="headerlink" title="B-tree"></a>B-tree</h2><h2 id="B-tree-1"><a href="#B-tree-1" class="headerlink" title="B+tree"></a>B+tree</h2><img src="https://raw.githubusercontent.com/wzs521/picgo/master/img/%E7%B4%A2%E5%BC%95.jpg"/>
+select*from t 
 
-        <div class="article-info info-on-right">
-          
+<p>where col2=89  </p>
+<p>   从第一行查起，比对是不是col=89，要查七次<br>假设把col2放到二叉树结构中去<br>一个节点除了放索引的字段<br>key-value<br>key索引字段<br>value放的索引字段所在行的磁盘地址<br><img src="https://raw.githubusercontent.com/wzs521/picgo/master/img/%E7%B4%A2%E5%BC%95.jpg"/><br>从根节点找，89&gt;34<br>，所以往右边找,查到，查了两次知道了磁盘地址，所以可以查到</p>
+<p>红黑树是一种弱平衡二叉树，对于搜索，插入，删除操作较多的情况，就用红黑树<br>用红黑树查找<br>col=6<br>查三次就找到了</p>
+<p>B-tree（非聚簇索引）<br>将一个节点分大点，存储更多的索引元素<br>没有冗余<br><img src="https://raw.githubusercontent.com/wzs521/picgo/master/img/btree.png"/></p>
+<p>B+tree（聚簇索引）<br>有冗余<br>也是在大节点里面放key-value<br>叶子节点多了个指针，叶子节点存储完整元素，非叶子节点只存储索引元素<br>高度为</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weichat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">索引</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/article/df9a61f7.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/article/c7296c54.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          CloudFlare
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/article/3258405c.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Freenom</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#索引"><span class="toc-number">1.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#索引是帮助MySQL高效获取数据的排好序的数据结构"><span class="toc-number">2.</span> <span class="toc-text">索引是帮助MySQL高效获取数据的排好序的数据结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#索引数据结构"><span class="toc-number">3.</span> <span class="toc-text">索引数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树"><span class="toc-number">3.1.</span> <span class="toc-text">二叉树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#红黑树（动辄数据库就是几十万几百万的数据，数据量过大，树的高度高，）"><span class="toc-number">3.2.</span> <span class="toc-text">红黑树（动辄数据库就是几十万几百万的数据，数据量过大，树的高度高，）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash表"><span class="toc-number">3.3.</span> <span class="toc-text">Hash表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-tree"><span class="toc-number">3.4.</span> <span class="toc-text">B-tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-tree-1"><span class="toc-number">3.5.</span> <span class="toc-text">B+tree</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -287,8 +453,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

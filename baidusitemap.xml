@@ -1,107 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
->
-
-<url>
- <loc>https://djrhhh.tk/2020/07/04/Sql</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/2020/07/04/Mysql</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/2019/07/04/Maven</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/2019/11/14/JavaIO</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/2020/07/04/Redis</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/archives/index.html</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/2020/07/04/git%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/cdn-cgi/l/email-protection</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/2019/03/29/%E9%83%A8%E7%BD%B2%E5%88%B0cloudfare</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/2019/03/25/%E7%B4%A2%E5%BC%95</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/page/2</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/2020/01/25/%E5%8D%95%E5%90%91%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://djrhhh.tk/2019/08/27/docker</loc>
- <priority>0.3</priority>
- <lastmod>2020-07-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://yoursite.com/article/c7296c54.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/8ffb0d96.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/8bae60c8.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/df9a61f7.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/7273cdc.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/7de43d5c.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/706ba620.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/37fd9ed5.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/e39b2c3f.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/f5f9fa9b.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/54e1373e.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/c0837e9c.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/515d78b5.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/bae4ff13.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/6fc8eab5.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/53d0684b.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/918971b1.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/3258405c.html</loc>
+    <lastmod>2020-07-21</lastmod>
+  </url>
+</urlset> 
