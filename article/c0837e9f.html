@@ -7,16 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Wanzesen&#39;s blog</title>
+  <title>递归算法 | Wanzesen&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="哈哈哈哈">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wanzesen&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="递归算法递归的三大要素 第一要素：明确你这个函数想要干什么。先不管函数里面的代码什么，而是要先明白，你这个函数的功能是什么，要完成什么样的一件事。 第二要素：寻找递归结束条件。我们需要找出当参数为啥时，递归结束，之后直接把结果返回，请注意，这个时候我们必须能根据这个参数的值，能够直接知道函数的结果是什么。 第三要素：找出函数的等价关系式。我们要不断缩小参数的范围，缩小之后，我们可以通过一些辅助的变">
+<meta property="og:type" content="article">
+<meta property="og:title" content="递归算法">
+<meta property="og:url" content="http://yoursite.com/article/c0837e9f.html">
 <meta property="og:site_name" content="Wanzesen&#39;s blog">
-<meta property="og:description" content="哈哈哈哈">
+<meta property="og:description" content="递归算法递归的三大要素 第一要素：明确你这个函数想要干什么。先不管函数里面的代码什么，而是要先明白，你这个函数的功能是什么，要完成什么样的一件事。 第二要素：寻找递归结束条件。我们需要找出当参数为啥时，递归结束，之后直接把结果返回，请注意，这个时候我们必须能根据这个参数的值，能够直接知道函数的结果是什么。 第三要素：找出函数的等价关系式。我们要不断缩小参数的范围，缩小之后，我们可以通过一些辅助的变">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-02-10T10:39:00.000Z">
+<meta property="article:modified_time" content="2020-07-23T10:50:53.633Z">
 <meta property="article:author" content="Wanzesen">
+<meta property="article:tag" content="递归">
+<meta property="article:tag" content="斐波那契数列">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Wanzesen&#39;s blog" type="application/atom+xml">
@@ -177,333 +181,258 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-递归" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
   
   
     
+      <header class="article-header">
+	  
+	  
+        
+  
+    <h1 class="article-title" itemprop="name">
+      递归算法
+    </h1>
+  
+
+		
+        
+		
+		
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='color:#ef7522;font-size:14px' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/article/c0837e9f.html" class="archive-article-date">
+  	<time datetime="2018-02-10T10:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-10</time>
+</a>
+        
+		
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="递归算法"><a href="#递归算法" class="headerlink" title="递归算法"></a>递归算法</h1><p>递归的三大要素</p>
+<p>第一要素：明确你这个函数想要干什么。先不管函数里面的代码什么，而是要先明白，你这个函数的功能是什么，要完成什么样的一件事。</p>
+<p>第二要素：寻找递归结束条件。我们需要找出当参数为啥时，递归结束，之后直接把结果返回，请注意，这个时候我们必须能根据这个参数的值，能够直接知道函数的结果是什么。</p>
+<p>第三要素：找出函数的等价关系式。我们要不断缩小参数的范围，缩小之后，我们可以通过一些辅助的变量或者操作，使原函数的结果不变。</p>
+<a id="more"></a>
+<h1 id="递归算法的三个分解步骤"><a href="#递归算法的三个分解步骤" class="headerlink" title="递归算法的三个分解步骤"></a>递归算法的三个分解步骤</h1><p>递归是一个重要的算法，希望你也能学得会。</p>
+<h2 id="递归的三大步骤"><a href="#递归的三大步骤" class="headerlink" title="递归的三大步骤"></a>递归的三大步骤</h2><p>编写递归函数的步骤，可以分解为三个。</p>
+<h2 id="递归第一个步骤：明确函数要做什么"><a href="#递归第一个步骤：明确函数要做什么" class="headerlink" title="递归第一个步骤：明确函数要做什么"></a>递归第一个步骤：明确函数要做什么</h2><p>对于递归，一个最重要的事情就是要明确这个函数的功能。这个函数要完成一样什么样的事情，是完全由程序员来定义的，当写一个递归函数的时候，先不要管函数里面的代码是什么，而要先明确这个函数是实现什么功能的。</p>
+<p>比如，我定义了一个函数，这个函数是用来计算n的阶乘的。</p>
+<p>// 计算n的阶乘（假设n不为0）<br>   int f(int n) {<br>    // 先不管内部实现逻辑<br>  }<br>这样，就完成了第一个步骤：明确递归函数的功能。</p>
+<h2 id="递归第二个步骤：明确递归的结束（退出递归）条件"><a href="#递归第二个步骤：明确递归的结束（退出递归）条件" class="headerlink" title="递归第二个步骤：明确递归的结束（退出递归）条件"></a>递归第二个步骤：明确递归的结束（退出递归）条件</h2><p>所谓递归，就是会在函数的内部逻辑代码中，调用这个函数本身。因此必须在函数内部明确递归的结束（退出）递归条件，否则函数会一直调用自己形成死循环。意思就是说，需要有一个条件（标识符参数）去引导递归结束，直接将结果返回。要注意的是，这个标识符参数需要是可以预见的，对于函数的执行返回结果也是可以预见的。</p>
+<p>比如在上面的计算n的阶乘的函数中，当n=1的时候，肯定能知道f(n)对应的结果是1，因为1的阶乘就是1，那么我们就可以接着完善函数内部的逻辑代码，即将第二元素（递归结束条件）加进代码里面。</p>
+<p>// 计算n的阶乘（假设n不为0）<br>          int f(int n) {<br>      if (n == 1) {<br>          return 1;<br>         }<br>}</p>
+<p>当然了，当n=2的时候，也可以知道n的阶乘是2，那么也可以把n=2作为递归的结束条件。</p>
+<p>// 计算n的阶乘（假设n&gt;=2）<br>int f(int n) {<br>    if (n == 2) {<br>        return 2;<br>    }<br>}  </p>
+<p>这里就可以看出，递归的结束条件并不局限，只要递归能正常结束，任何结束条件都是允许的，但是要注意一些逻辑上的细节。比如说上面的n==2的条件就需要n&gt;2，否则当n=1的时候就会被漏掉，可能导致递归不能正常结束。完善一下就是当n&lt;=2的时候，f(n)都会等于n。</p>
+<p>// 计算n的阶乘（假设n不为0）<br>int f(int n) {<br>    if (n &lt;= 2) {<br>        return n;<br>      }<br>}</p>
+<p>这样，就完成了第二步骤：明确递归的退出条件。</p>
+<h2 id="递归的第三个步骤：找到函数的等价关系式"><a href="#递归的第三个步骤：找到函数的等价关系式" class="headerlink" title="递归的第三个步骤：找到函数的等价关系式"></a>递归的第三个步骤：找到函数的等价关系式</h2><p>递归的第三个步骤就是要不断地缩小参数的范围，缩小之后就可以通过一些辅助的变量或操作使原函数的结果不变。比如在上面的计算n的阶乘的函数中，要缩小f(n)的范围，就可以让f(n)=n* f(n-1)，这样范围就从n变成了n-1，范围变小了，直到范围抵达n&lt;=2退出递归。并且为了维持原函数不变，我们需要让f(n-1)乘上n。说白了，就是要找到一个原函数的等价关系式。在这里，f(n)的等价关系式为n<em>f(n-1)，即f(n)=n</em>f(n-1)。</p>
+<p>// 计算n的阶乘（假设n不为0）<br>int f(int n) {<br>    if (n &lt;= 2) {<br>        return n;<br>    }<br>    // 把n打出来看一下，你就能明白递归的原理了<br>    System.out.println(n);<br>    // 加入f(n)的等价操作逻辑<br>    return n * f(n - 1);<br>}</p>
+<p>到这里f(n)的功能就基本实现了。每次写递归函数的时候，强迫自己跟着这三个步骤走，能达到事半功倍的效果。另外也可以看出，第三个步骤几乎是最难的一个步骤。</p>
+<h2 id="递归案例1：斐波那契数列"><a href="#递归案例1：斐波那契数列" class="headerlink" title="递归案例1：斐波那契数列"></a>递归案例1：斐波那契数列</h2><p>斐波那契数列的是这样一个数列：1、1、2、3、5、8、13、21、34、….，即第一项 f(1) = 1、第二项 f(2) = 1、…..、第 n 项目为 f(n)=f(n-1)+f(n-2)，求第 n 项的值是多少。</p>
+<h3 id="递归第一个步骤：明确函数要做什么-1"><a href="#递归第一个步骤：明确函数要做什么-1" class="headerlink" title="递归第一个步骤：明确函数要做什么"></a>递归第一个步骤：明确函数要做什么</h3><p>假设f(n)的功能是求第n项的值，代码如下：</p>
+<p>int f(int n) {  </p>
+<p>}   </p>
+<h3 id="递归第二个步骤：明确递归的结束（退出递归）条件-1"><a href="#递归第二个步骤：明确递归的结束（退出递归）条件-1" class="headerlink" title="递归第二个步骤：明确递归的结束（退出递归）条件"></a>递归第二个步骤：明确递归的结束（退出递归）条件</h3><p>显然，当n=1或者n=2的时候，我们可以轻易得知结果是f(1)=f(2)=1。所以递归结束的条件可以是n&lt;=2，代码如下：</p>
+<p>int f(int n) {<br>    if (n &lt;= 2) {<br>        return 1;<br>    }<br>}</p>
+<h3 id="递归的第三个步骤：找到函数的等价关系式-1"><a href="#递归的第三个步骤：找到函数的等价关系式-1" class="headerlink" title="递归的第三个步骤：找到函数的等价关系式"></a>递归的第三个步骤：找到函数的等价关系式</h3><p>在题目中已经有等价关系式了，即f(n) = f(n-1) + f(n-2)。</p>
+<p>int f(int n) {<br>    // 先写递归结束条件<br>    if (n &lt;= 2) {<br>        return 1;<br>    }<br>    // 写等价关系式<br>    return f(n - 1) + f(n - 2);<br>}</p>
+<p>这个案例非常简单。</p>
+<h2 id="递归案例2：小青蛙跳台阶"><a href="#递归案例2：小青蛙跳台阶" class="headerlink" title="递归案例2：小青蛙跳台阶"></a>递归案例2：小青蛙跳台阶</h2><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+<h2 id="递归第一个步骤：明确函数要做什么-2"><a href="#递归第一个步骤：明确函数要做什么-2" class="headerlink" title="递归第一个步骤：明确函数要做什么"></a>递归第一个步骤：明确函数要做什么</h2><p>假设f(n)的功能是求青蛙跳上一个n级台阶总共有多少种跳法，代码如下：</p>
+<p>int f(int n) {</p>
+<p>}    </p>
+<h2 id="递归第二个步骤：明确递归的结束（退出递归）条件-2"><a href="#递归第二个步骤：明确递归的结束（退出递归）条件-2" class="headerlink" title="递归第二个步骤：明确递归的结束（退出递归）条件"></a>递归第二个步骤：明确递归的结束（退出递归）条件</h2><p>上面说了，求递归结束的条件，直接把n压缩到很小很小就行了，因为n越小我们就能越直观地算出f(n)的多少。这里，当n=1的时候，f(1)=1，因此可以将n=1作为递归结束条件。</p>
+<p>int f(int n) {<br>    if (n == 1) {<br>        return 1;<br>    }<br>}</p>
+<h2 id="递归的第三个步骤：找到函数的等价关系式-2"><a href="#递归的第三个步骤：找到函数的等价关系式-2" class="headerlink" title="递归的第三个步骤：找到函数的等价关系式"></a>递归的第三个步骤：找到函数的等价关系式</h2><p>接下来找到函数的等价关系式就是这个函数的难点了，下面来分析一下。</p>
+<h3 id="1-假设台阶只有一级，那么显然只有一种跳法。"><a href="#1-假设台阶只有一级，那么显然只有一种跳法。" class="headerlink" title="1.假设台阶只有一级，那么显然只有一种跳法。"></a>1.假设台阶只有一级，那么显然只有一种跳法。</h3><h3 id="2-要是有两级台阶，那么就有两种跳法：一种是一次跳一级台阶，一种是一次跳两级台阶。"><a href="#2-要是有两级台阶，那么就有两种跳法：一种是一次跳一级台阶，一种是一次跳两级台阶。" class="headerlink" title="2.要是有两级台阶，那么就有两种跳法：一种是一次跳一级台阶，一种是一次跳两级台阶。"></a>2.要是有两级台阶，那么就有两种跳法：一种是一次跳一级台阶，一种是一次跳两级台阶。</h3><h3 id="3-要是有三级台阶，青蛙的第一步就有两种跳法：当青蛙第一步跳了一级台阶，那么就只剩下了两级台阶，将问题转化成为两级台阶的跳法，当青蛙第一步跳了两级台阶，那么就只剩下了一级台阶，就将问题转化为了一级台阶的跳法。"><a href="#3-要是有三级台阶，青蛙的第一步就有两种跳法：当青蛙第一步跳了一级台阶，那么就只剩下了两级台阶，将问题转化成为两级台阶的跳法，当青蛙第一步跳了两级台阶，那么就只剩下了一级台阶，就将问题转化为了一级台阶的跳法。" class="headerlink" title="3.要是有三级台阶，青蛙的第一步就有两种跳法：当青蛙第一步跳了一级台阶，那么就只剩下了两级台阶，将问题转化成为两级台阶的跳法，当青蛙第一步跳了两级台阶，那么就只剩下了一级台阶，就将问题转化为了一级台阶的跳法。"></a>3.要是有三级台阶，青蛙的第一步就有两种跳法：当青蛙第一步跳了一级台阶，那么就只剩下了两级台阶，将问题转化成为两级台阶的跳法，当青蛙第一步跳了两级台阶，那么就只剩下了一级台阶，就将问题转化为了一级台阶的跳法。</h3><h3 id="4-n阶台阶与三阶台阶的分析是一样的。"><a href="#4-n阶台阶与三阶台阶的分析是一样的。" class="headerlink" title="4.n阶台阶与三阶台阶的分析是一样的。"></a>4.n阶台阶与三阶台阶的分析是一样的。</h3><p>我们把跳n级台阶时的跳法看成是n的函数，记为f(n)。当n=1时，f(1)=1；当n=2时，f(2)=2；当n=3时，f(3)=f(2)+f(1)；当n=4时，f(4)=f(3)+f(2)……当n=n的时候，f(n)=f(n-2)+f(n-1)，显然这是一个斐波那契数列。</p>
+<p>int f(int n) {<br>    // 先写递归结束条件<br>    if (n == 1) {<br>        return 1;<br>    }<br>    // 写等价关系式<br>    return f(n - 1) + f(n - 2);<br>}  </p>
+<p>要注意的是，上面的递归结束条件显然不够严谨，因为当n=2的时候，这里的递归退出条件就不能够限制递归的正常退出了，需要稍微完善一下。</p>
+<p>int f(int n) {<br>    // 先写递归结束条件<br>    if (n &lt; 1) {<br>        return 0;<br>    }<br>    if (n == 1) {<br>        return 1;<br>    }<br>    if (n == 2) {<br>        return 2;<br>    }<br>    // 写等价关系式<br>    return f(n - 1) + f(n - 2);<br>}  </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weichat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/article/c0837e9c.html" class="archive-article-date">
-  	<time datetime="2019-11-14T03:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/c0837e9c.html">JavaI/O</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">I/O</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">斐波那契数列</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://djrhhh.tk/article/c0837e9f.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
 
-<a href="/article/f5f9fa9b.html" class="archive-article-date">
-  	<time datetime="2019-08-27T02:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
-</a>
+  
+<nav id="article-nav">
+  
+    <a href="/article/7de43d5c.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vim小记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/article/918971b1.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java并发</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/f5f9fa9b.html">Docker</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#递归算法"><span class="toc-number">1.</span> <span class="toc-text">递归算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递归算法的三个分解步骤"><span class="toc-number">2.</span> <span class="toc-text">递归算法的三个分解步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归的三大步骤"><span class="toc-number">2.1.</span> <span class="toc-text">递归的三大步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归第一个步骤：明确函数要做什么"><span class="toc-number">2.2.</span> <span class="toc-text">递归第一个步骤：明确函数要做什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归第二个步骤：明确递归的结束（退出递归）条件"><span class="toc-number">2.3.</span> <span class="toc-text">递归第二个步骤：明确递归的结束（退出递归）条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归的第三个步骤：找到函数的等价关系式"><span class="toc-number">2.4.</span> <span class="toc-text">递归的第三个步骤：找到函数的等价关系式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归案例1：斐波那契数列"><span class="toc-number">2.5.</span> <span class="toc-text">递归案例1：斐波那契数列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#递归第一个步骤：明确函数要做什么-1"><span class="toc-number">2.5.1.</span> <span class="toc-text">递归第一个步骤：明确函数要做什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归第二个步骤：明确递归的结束（退出递归）条件-1"><span class="toc-number">2.5.2.</span> <span class="toc-text">递归第二个步骤：明确递归的结束（退出递归）条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归的第三个步骤：找到函数的等价关系式-1"><span class="toc-number">2.5.3.</span> <span class="toc-text">递归的第三个步骤：找到函数的等价关系式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归案例2：小青蛙跳台阶"><span class="toc-number">2.6.</span> <span class="toc-text">递归案例2：小青蛙跳台阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归第一个步骤：明确函数要做什么-2"><span class="toc-number">2.7.</span> <span class="toc-text">递归第一个步骤：明确函数要做什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归第二个步骤：明确递归的结束（退出递归）条件-2"><span class="toc-number">2.8.</span> <span class="toc-text">递归第二个步骤：明确递归的结束（退出递归）条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归的第三个步骤：找到函数的等价关系式-2"><span class="toc-number">2.9.</span> <span class="toc-text">递归的第三个步骤：找到函数的等价关系式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-假设台阶只有一级，那么显然只有一种跳法。"><span class="toc-number">2.9.1.</span> <span class="toc-text">1.假设台阶只有一级，那么显然只有一种跳法。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-要是有两级台阶，那么就有两种跳法：一种是一次跳一级台阶，一种是一次跳两级台阶。"><span class="toc-number">2.9.2.</span> <span class="toc-text">2.要是有两级台阶，那么就有两种跳法：一种是一次跳一级台阶，一种是一次跳两级台阶。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-要是有三级台阶，青蛙的第一步就有两种跳法：当青蛙第一步跳了一级台阶，那么就只剩下了两级台阶，将问题转化成为两级台阶的跳法，当青蛙第一步跳了两级台阶，那么就只剩下了一级台阶，就将问题转化为了一级台阶的跳法。"><span class="toc-number">2.9.3.</span> <span class="toc-text">3.要是有三级台阶，青蛙的第一步就有两种跳法：当青蛙第一步跳了一级台阶，那么就只剩下了两级台阶，将问题转化成为两级台阶的跳法，当青蛙第一步跳了两级台阶，那么就只剩下了一级台阶，就将问题转化为了一级台阶的跳法。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-n阶台阶与三阶台阶的分析是一样的。"><span class="toc-number">2.9.4.</span> <span class="toc-text">4.n阶台阶与三阶台阶的分析是一样的。</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+        
+    </div>
+</aside>
 
-<a href="/article/7273cdc.html" class="archive-article-date">
-  	<time datetime="2019-07-03T17:04:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/7273cdc.html">Maven</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Maven</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/article/c7296c54.html" class="archive-article-date">
-  	<time datetime="2019-03-29T01:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/c7296c54.html">CloudFlare</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">域名</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Blog</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">cloudfare</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/article/df9a61f7.html" class="archive-article-date">
-  	<time datetime="2019-03-25T02:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/df9a61f7.html">索引</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">索引</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/article/3258405c.html" class="archive-article-date">
-  	<time datetime="2019-03-20T05:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/3258405c.html">Freenom</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">域名</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Blog</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/article/515d78b5.html" class="archive-article-date">
-  	<time datetime="2019-02-14T05:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/515d78b5.html">Java虚拟机</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -573,8 +502,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
