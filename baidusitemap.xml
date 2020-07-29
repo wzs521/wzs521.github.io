@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/article/Divide-and-Conquer%EF%BC%88P%EF%BC%89.html</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/Insert%20sort.html</loc>
+    <lastmod>2020-07-27</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/Shell%20sort.html</loc>
+    <lastmod>2020-07-27</lastmod>
+  </url>
+  <url>
     <loc>http://yoursite.com/article/docker.html</loc>
     <lastmod>2020-07-26</lastmod>
   </url>
