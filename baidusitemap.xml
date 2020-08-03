@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/article/scientific%20internet.html</loc>
+    <lastmod>2020-07-31</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/Quicksort.html</loc>
+    <lastmod>2020-07-31</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/f92eff5d.html</loc>
+    <lastmod>2020-07-30</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/a4ce31d2.html</loc>
+    <lastmod>2020-07-30</lastmod>
+  </url>
+  <url>
     <loc>http://yoursite.com/article/Selection%20sort.html</loc>
     <lastmod>2020-07-30</lastmod>
   </url>
@@ -9,11 +25,19 @@
     <lastmod>2020-07-30</lastmod>
   </url>
   <url>
+    <loc>http://yoursite.com/article/Dynamic%20Programming.html</loc>
+    <lastmod>2020-07-30</lastmod>
+  </url>
+  <url>
     <loc>http://yoursite.com/article/Insert%20sort.html</loc>
     <lastmod>2020-07-30</lastmod>
   </url>
   <url>
     <loc>http://yoursite.com/article/Shell%20sort.html</loc>
+    <lastmod>2020-07-30</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/KMP.html</loc>
     <lastmod>2020-07-30</lastmod>
   </url>
   <url>
@@ -51,6 +75,10 @@
   <url>
     <loc>http://yoursite.com/article/c0837e9y.html</loc>
     <lastmod>2020-07-26</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/article/6b3e1469.html</loc>
+    <lastmod>2020-07-24</lastmod>
   </url>
   <url>
     <loc>http://yoursite.com/article/c0837e9f.html</loc>
